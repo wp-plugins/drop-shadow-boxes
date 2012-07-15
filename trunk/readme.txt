@@ -44,10 +44,6 @@ inside_shadow = [true/false] default: "true" <br />
 outside_shadow = [true/false] default: "true" <br />
 effect = [lifted/curled/perspective-left/perspective-right/raised/vertical-curve-left/vertical-curve-both/horizontal-curve-bottom/horizontal-curve-both] default: "lifted"
 
-== Screenshots ==
-
-1. Shortcode builder
-2. Example boxes
 
 == Frequently Asked Questions ==
 
@@ -62,7 +58,10 @@ The css file will only be loaded when it's needed - when there's a [dropshadowbo
 
 == Screenshots ==
 
-Please see the following page for screenshots and examples:
+1. Shortcode builder
+2. Example boxes
+
+Please see the following page for examples:
 http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples/
 
 
