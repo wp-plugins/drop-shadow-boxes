@@ -35,15 +35,19 @@ Example usage:
 [dropshadowbox effect="horizontal-curve-bottom" rounded_corners="false"]your content[/dropshadowbox]
 
 Attributes:
-align = [left/right/center/none] default: "none"
-width = [width plus units e.g. "250px" or "50%"] default: "300px"
-border_width = [width in pixels] default "2"
-border_color = [colour code or name e.g. "#A8A8A8" or "blue"] default:"#DDD"
-rounded_corners = [true/false] default: "true"
-inside_shadow = [true/false] default: "true"
-outside_shadow = [true/false] default: "true"
+align = [left/right/center/none] default: "none" <br />
+width = [width plus units e.g. "250px" or "50%"] default: "300px" <br />
+border_width = [width in pixels] default "2" <br />
+border_color = [colour code or name e.g. "#A8A8A8" or "blue"] default:"#DDD" <br />
+rounded_corners = [true/false] default: "true" <br />
+inside_shadow = [true/false] default: "true" <br />
+outside_shadow = [true/false] default: "true" <br />
 effect = [lifted/curled/perspective-left/perspective-right/raised/vertical-curve-left/vertical-curve-both/horizontal-curve-bottom/horizontal-curve-both] default: "lifted"
 
+== Screenshots ==
+
+1. Shortcode builder
+2. Example boxes
 
 == Frequently Asked Questions ==
 
