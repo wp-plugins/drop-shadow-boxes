@@ -62,6 +62,9 @@ No. It uses CSS3 only to prodcue the effects.
 
 == Screenshots ==
 
+Please see the following page for examples to see how it performs on your browser:
+http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples/
+
 1. Example boxes
 2. Shortcode builder
 
