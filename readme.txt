@@ -51,6 +51,9 @@ effect = [lifted/curled/perspective-left/perspective-right/raised/vertical-curve
 It will work on the latest versions of all browsers. Older versions are not supported. Please see the following page for examples to see how it performs on your browser:
 http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples/
 
+= How do I open the shortcode builder? =
+While you're editing a post or page you can open the shortcode builder by clicking on the box icon next to the upload media button above the toolbar.
+
 = Can I edit the shadow effect? =
 The shortcode builder offers quite a few options. If you need further customisation you'll need to edit the css file.
 
