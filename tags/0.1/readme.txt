@@ -48,7 +48,8 @@ effect = [lifted/curled/perspective-left/perspective-right/raised/vertical-curve
 == Frequently Asked Questions ==
 
 = Will the shadows work in all browser? =
-It will work on the latest versions of all browsers. Older versions are not supported.
+It will work on the latest versions of all browsers. Older versions are not supported. Please see the following page for examples to see how it performs on your browser:
+http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples/
 
 = Can I edit the shadow effect? =
 The shortcode builder offers quite a few options. If you need further customisation you'll need to edit the css file.
@@ -56,13 +57,13 @@ The shortcode builder offers quite a few options. If you need further customisat
 = Will the css file be loaded on all pages or only when it's needed? =
 The css file will only be loaded when it's needed - when there's a [dropshadowbox] shortcode on the page or post.
 
+= Are images used to display the shadows? =
+No. It uses CSS3 only to prodcue the effects.
+
 == Screenshots ==
 
-1. Shortcode builder
-2. Example boxes
-
-Please see the following page for examples:
-http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples/
+1. Example boxes
+2. Shortcode builder
 
 
 == ChangeLog ==
