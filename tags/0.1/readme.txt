@@ -48,7 +48,7 @@ effect = [lifted/curled/perspective-left/perspective-right/raised/vertical-curve
 == Frequently Asked Questions ==
 
 = Will the shadows work in all browser? =
-It will work on the latest versions of all browsers. Older versions are not supported. Please see the following page for examples to see how it performs on your browser:
+It will work on the latest versions of all browsers. Some older browsers may not display the shadows - but they will display the box with the content. Please see the following page for examples to see how it performs on your browser:
 http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples/
 
 = How do I open the shortcode builder? =
