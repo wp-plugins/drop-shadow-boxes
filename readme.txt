@@ -18,9 +18,10 @@ http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples
 
 The plugin itself doesn't require any configuration. There isn't a setting page, just a shortcode builder which you can access from the media toolbar while you're editing the post/page by clicking on the box icon next to the upload/insert media button.
 
-** Shortcode Reference **
+= Shortcode Reference =
 
-If you prefer not to use the shortcode builder, or if you'd like to modify an existing drop shadow box here's the 
+If you prefer not to use the shortcode builder, or if you'd like to modify an existing drop shadow box here's the shortcode reference guide.
+
 Example usage:
 
 [dropshadowbox]your content[/dropshadowbox]
