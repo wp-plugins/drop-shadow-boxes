@@ -78,7 +78,7 @@ The shortcode builder offers quite a few options. If you need further customisat
 The css file will only be loaded when it's needed - when there's a [dropshadowbox] shortcode on the page or post.
 
 = Are images used to display the shadows? =
-No. It uses CSS3 only to prodcue the effects.
+No. It uses CSS3 only.
 
 == Screenshots ==
 
