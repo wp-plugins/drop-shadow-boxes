@@ -19,8 +19,10 @@ http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples
 The plugin itself doesn't require any configuration. There isn't a setting page, just a shortcode builder which you can access from the media toolbar while you're editing the post/page by clicking on the box icon next to the upload/insert media button.
 
 ** Shortcode Reference **
+
 If you prefer not to use the shortcode builder, or if you'd like to modify an existing drop shadow box here's the 
 Example usage:
+
 [dropshadowbox]your content[/dropshadowbox]
 
 [dropshadowbox align="left"]your content[/dropshadowbox]
@@ -30,21 +32,27 @@ Example usage:
 [dropshadowbox effect="horizontal-curve-bottom" rounded_corners="false"]your content[/dropshadowbox]
 
 Attributes:
-align = [left/right/center/none] default: "none" <br />
-width = [width plus units e.g. "250px" or "50%"] default: "300px" <br />
-border_width = [width in pixels] default "2" <br />
-border_color = [colour code or name e.g. "#A8A8A8" or "blue"] default:"#DDD" <br />
-rounded_corners = [true/false] default: "true" <br />
-inside_shadow = [true/false] default: "true" <br />
-outside_shadow = [true/false] default: "true" <br />
-effect = [lifted/curled/perspective-left/perspective-right/raised/vertical-curve-left/vertical-curve-both/horizontal-curve-bottom/horizontal-curve-both] default: "lifted"<br />
+
+align = [left/right/center/none] default: "none"
+
+width = [width plus units e.g. "250px" or "50%"] default: "300px"
+
+border_width = [width in pixels] default "2"
+
+border_color = [colour code or name e.g. "#A8A8A8" or "blue"] default:"#DDD"
+
+rounded_corners = [true/false] default: "true"
+
+inside_shadow = [true/false] default: "true"
+
+outside_shadow = [true/false] default: "true"
+
+effect = [lifted/curled/perspective-left/perspective-right/raised/vertical-curve-left/vertical-curve-both/horizontal-curve-bottom/horizontal-curve-both] default: "lifted"
+
 
 Drop Shadow Boxes is currently in beta. If you find any that needs fixing, or if you have any ideas for improvements, please get in touch:
 http://www.stevenhenty.com/contact/ 
 
-
-Drop Shadow Boxes is currently in beta. If you find any that needs fixing, or if you have any ideas for improvements, please get in touch:
-http://www.stevenhenty.com/contact/ 
 
 
 
