@@ -3,7 +3,7 @@ Contributors: stevehenty
 Tags: drop shadow,box shadow,perspective,raised,curl,lifted
 Requires at least: 3.0
 Tested up to: 3.4
-Stable tag: 0.1
+Stable tag: 0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,7 +11,7 @@ Provides an easy way to highlight important content on your posts and pages insi
 
 == Description ==
 
-Drop Shadow Boxes provides an easy way to highlight important content on your posts and pages. Includes a shortcode builder with a preview so you can test your box before adding it. It will work on the latest versions of all browsers. Some older browsers may not display the shadows - but they will display the box with the content. Please see the following page for examples to see how it performs on your browser:
+Drop Shadow Boxes provides an easy way to highlight important content on your posts and pages. Includes a shortcode builder with a preview so you can test your box before adding it. It works on most browsers. Some older version of Internet Explorer may not display the shadows - but they will display the box with the content. Please see the following page for examples to see how it performs on your browser:
 http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples/
 
 = Instructions =
@@ -50,10 +50,18 @@ outside_shadow = [true/false] default: "true"
 
 effect = [lifted/curled/perspective-left/perspective-right/raised/vertical-curve-left/vertical-curve-both/horizontal-curve-bottom/horizontal-curve-both] default: "lifted"
 
+= Language Versions =
 
+Drop Shadow Boxes is currently available in English and Spanish (es_ES). The shortcode builder will automatically switch to Spanish if your WordPress installation is in Spanish (es_ES).
+
+If you'd like to contribute other languages please get in touch with me here:
+http://www.stevenhenty.com/contact/ 
+
+= Beta Notice =
 Drop Shadow Boxes is currently in beta. If you find any that needs fixing, or if you have any ideas for improvements, please get in touch:
 http://www.stevenhenty.com/contact/ 
 
+Please also get in touch if you're using the latest version of your browser but the shadows are not displaying.
 
 
 
@@ -92,6 +100,13 @@ http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples
 
 == ChangeLog ==
 
+= 0.2 =
+* A couple of new effects, some fixes and now also available in Spanish.
+
 = 0.1 =
 * Initial beta release.
 
+== Upgrade Notice ==
+
+= 0.2 =
+A couple of new effects, some fixes and now also available in Spanish.

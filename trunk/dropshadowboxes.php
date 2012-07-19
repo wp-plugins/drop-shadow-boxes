@@ -3,7 +3,7 @@
 Plugin Name: Drop Shadow Boxes
 Plugin URI: http://www.stevenhenty.com
 Description: Drop Shadow Boxes provides an easy way to highlight important content on your posts and pages. Includes a shortcode builder with a preview so you can test your box before adding it.
-Version: 0.1
+Version: 0.2
 Author: stevehenty
 Author URI: http://www.stevenhenty.com
 
@@ -47,7 +47,7 @@ class DropShadowBoxes {
     private static $path = "dropshadowboxes/dropshadowboxes.php";
     private static $url = "http://www.stevenhenty.com";
     private static $slug = "dropshadowboxes";
-    private static $version = "0.1";
+    private static $version = "0.2";
 
 	static $add_scripts;
 	
@@ -56,7 +56,7 @@ class DropShadowBoxes {
     public static function init(){
 		
 		
-
+		load_plugin_textdomain( 'dropshadowboxes', false, '/dropshadowboxes/languages' );
 			
 		//register scripts
 		
@@ -167,8 +167,12 @@ class DropShadowBoxes {
 			$box_classes .= "dropshadowboxes-outside-shadow ";
 			
 
-		if ( $effect == "lifted" )	
-			$box_classes .= "dropshadowboxes-lifted ";
+		if ( $effect == "lifted-both" )	
+			$box_classes .= "dropshadowboxes-lifted-both ";
+		if ( $effect == "lifted-bottom-left" )	
+			$box_classes .= "dropshadowboxes-lifted-bottom-left ";
+		if ( $effect == "lifted-bottom-right" )	
+			$box_classes .= "dropshadowboxes-lifted-bottom-right ";
 		elseif ( $effect == "curled" )
 			$box_classes .= "dropshadowboxes-curled ";
 		elseif ( $effect == "perspective-left" )
@@ -188,7 +192,7 @@ class DropShadowBoxes {
 			}
 			
 		} elseif ( $effect == "vertical-curve-left" )
-			$box_classes .= "dropshadowboxes-curved dropshadowboxes-curved-vertical-1 ";
+			$box_classes .= "dropshadowboxes-curved ";
 		elseif ( $effect == "vertical-curve-both" )
 			$box_classes .= "dropshadowboxes-curved dropshadowboxes-curved-vertical-2 ";
 		elseif ( $effect == "horizontal-curve-bottom" )
@@ -267,7 +271,6 @@ class DropShadowBoxes {
 
 							jQuery("#dropshadowboxes_preview-placeholder").html(ajaxresults.preview);
 
-
 						}
 						
 					}
@@ -279,16 +282,19 @@ class DropShadowBoxes {
         </script>
         <div id="add_dropshadowbox" style="display:none;width:640px;overflow:auto">
             <div id="dropshadowbox_shortcode_builder_container" class="wrap">
-                <div>
+                
                     <div style="padding:15px 15px 0 15px;">
                         <h3 style="color:#5A5A5A!important; font-family:Georgia,Times New Roman,Times,serif!important; font-size:1.8em!important; font-weight:normal!important;margin-top:0"><?php _e("Insert a Drop-Shadow Box", "dropshadowboxes"); ?></h3>
                         <span>
                             <?php _e("Select the options below for your drop-shadow box.", "dropshadowboxes"); ?>
                         </span>
                     </div>
-					 <div style="padding:15px 15px 0 15px;">Effect: 
+					 <div style="padding:15px 15px 0 15px;"><?php _e("Effect:", "dropshadowboxes"); ?>
                         <select id="box_effect">
-							<option value="lifted"><?php _e("Lifted", "dropshadowboxes"); ?> </option>
+							<option value="lifted-both"><?php _e("Lifted (Both)", "dropshadowboxes"); ?> </option>
+							<option value="lifted-bottom-left"><?php _e("Lifted (Left)", "dropshadowboxes"); ?> </option>
+							<option value="lifted-bottom-right"><?php _e("Lifted (Right)", "dropshadowboxes"); ?> </option>
+							
                            <option value="curled"><?php _e("Curled", "dropshadowboxes"); ?> </option>
 						   <option value="perspective-left"><?php _e("Perspective (Left)", "dropshadowboxes"); ?> </option>
 						   <option value="perspective-right"><?php _e("Perspective (Right)", "dropshadowboxes"); ?> </option>
@@ -298,28 +304,28 @@ class DropShadowBoxes {
 						   <option value="horizontal-curve-bottom"><?php _e("Horizontal Curve (Bottom)", "dropshadowboxes"); ?> </option>
 						   <option value="horizontal-curve-both"><?php _e("Horizontal Curve (Both)", "dropshadowboxes"); ?> </option>
                         </select>
-						&nbsp;&nbsp;
-						Alignment:
+						
+						<?php _e("Alignment:", "dropshadowboxes"); ?>
 						<select id="box_alignment">
 							<option value="none"><?php _e("None", "dropshadowboxes"); ?> </option>
-                           <option value="left"><?php _e("Left", "dropshadowboxes"); ?> </option>
-						   <option value="right"><?php _e("Right", "dropshadowboxes"); ?> </option>
-						   <option value="center"><?php _e("Center", "dropshadowboxes"); ?> </option>
+							<option value="left"><?php _e("Left", "dropshadowboxes"); ?> </option>
+							<option value="right"><?php _e("Right", "dropshadowboxes"); ?> </option>
+							<option value="center"><?php _e("Center", "dropshadowboxes"); ?> </option>
                         </select>
-						&nbsp;&nbsp;
-						Width:
+						
+						<?php _e("Width:", "dropshadowboxes"); ?>
 						<input id="box_width" value="250" class="small-text" type="text" />
 						<select id="box_width_units">
 							<option value="px"><?php _e("pixels", "dropshadowboxes"); ?> </option>
-                           <option value="%"><?php _e("%", "dropshadowboxes"); ?> </option>
+							<option value="%"><?php _e("%", "dropshadowboxes"); ?> </option>
                         </select>
 						
                     </div>
 
 
 					<div style="padding:15px 15px 0 15px;">
-                        Border width (pixels): <input id="border_width" value="1" class="small-text" type="text" /> &nbsp;&nbsp;&nbsp;
-                        Border color  
+                        <?php _e("Border width (pixels):", "dropshadowboxes"); ?><input id="border_width" value="1" class="small-text" type="text" /> &nbsp;&nbsp;&nbsp;
+                        <?php _e("Border color:", "dropshadowboxes"); ?>  
 						<select id="border_color">
 							<option value="#DDD"><?php _e("Gray", "dropshadowboxes"); ?> </option>
 							<option value="red"><?php _e("Red", "dropshadowboxes"); ?> </option>
@@ -338,16 +344,16 @@ class DropShadowBoxes {
                     </div>
 					
 					<div style="padding:15px 15px 0 15px;">
-                        <textarea style="width:100%" id="box_content">Enter your content here.</textarea> &nbsp;&nbsp;&nbsp;
+                        <textarea style="width:100%" id="box_content"><?php _e("Enter your content here.", "dropshadowboxes"); ?></textarea> &nbsp;&nbsp;&nbsp;
                         
                     </div>
                     <div style="padding:0px 15px 15px 15px;">
-						<input type="button" class="button-primary" value="Refresh Preview" onclick="RefreshPreview();"/>&nbsp;&nbsp;&nbsp;
-                        <input type="button" class="button-primary" value="Insert Box" onclick="SendDropShadowShortCodeToEditor();"/>&nbsp;&nbsp;&nbsp;
+						<input type="button" class="button-primary" value="<?php _e("Refresh Preview", "dropshadowboxes"); ?>" onclick="RefreshPreview();"/>&nbsp;&nbsp;&nbsp;
+                        <input type="button" class="button-primary" value="<?php _e("Insert Box", "dropshadowboxes"); ?>" onclick="SendDropShadowShortCodeToEditor();"/>&nbsp;&nbsp;&nbsp;
                     <a class="button" style="color:#bbb;" href="#" onclick="tb_remove(); return false;"><?php _e("Cancel", "dropshadowboxes"); ?></a>
                     </div>
 					<fieldset style="border: 4px dashed #DDDDDD;width:90%;margin:0 15px 0 15px;">
-						<legend style="color:#CCC;font-weight:bold;font-family: Helvetica, Arial;font-size: 1.8em">Preview</legend>
+						<legend style="color:#CCC;font-weight:bold;font-family: Helvetica, Arial;font-size: 1.8em"><?php _e("Preview", "dropshadowboxes"); ?></legend>
 						<div id="dropshadowboxes_preview_box" style="height: 200px;padding:15px;overflow:auto;">
 							<div id="dropshadowboxes_preview_container" style="width:95%;">
 							Tellus vestibulum tempus tellus ullamcorper amet egestas varius sollicitudin ut tellus ac sollicitudin dolor. 
@@ -355,7 +361,7 @@ class DropShadowBoxes {
 							Curabitur auctor dignissim dignissim tellus at ligula facilisis et varius sit ullamcorper egestas sit hendrerit vestibulum in. Donec amet lorem amet id velit amet id ut nec nulla dignissim. Tortor morbi varius iaculis lorem vestibulum amet dignissim facilisis in. 
 							</div>
 						</div>
-					<fieldset>
+					</fieldset>
             </div>
         </div>
 		<script>
