@@ -167,11 +167,13 @@ class DropShadowBoxes {
 			$box_classes .= "dropshadowboxes-outside-shadow ";
 			
 
-		if ( $effect == "lifted-both" )	
+		if ( $effect == "lifted" )	
 			$box_classes .= "dropshadowboxes-lifted-both ";
-		if ( $effect == "lifted-bottom-left" )	
+		elseif ( $effect == "lifted-both" )	
+			$box_classes .= "dropshadowboxes-lifted-both ";
+		elseif ( $effect == "lifted-bottom-left" )	
 			$box_classes .= "dropshadowboxes-lifted-bottom-left ";
-		if ( $effect == "lifted-bottom-right" )	
+		elseif ( $effect == "lifted-bottom-right" )	
 			$box_classes .= "dropshadowboxes-lifted-bottom-right ";
 		elseif ( $effect == "curled" )
 			$box_classes .= "dropshadowboxes-curled ";
