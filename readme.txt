@@ -118,6 +118,9 @@ http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples
 
 == ChangeLog ==
 
+= 0.3 =
+Added a widget
+
 = 0.2 =
 * A couple of new effects, some fixes and now also available in Spanish.
 
