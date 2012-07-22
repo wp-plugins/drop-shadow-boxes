@@ -3,7 +3,7 @@
 Plugin Name: Drop Shadow Boxes
 Plugin URI: http://www.stevenhenty.com
 Description: Drop Shadow Boxes provides an easy way to highlight important content on your posts and pages. Includes a shortcode builder with a preview so you can test your box before adding it.
-Version: 0.2
+Version: 0.3
 Author: stevehenty
 Author URI: http://www.stevenhenty.com
 
@@ -29,7 +29,9 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 
 
 //------------------------------------------
+ 
 
+require_once(DropShadowBoxes::get_base_path() . "/widget.php");
 
 if(!defined("DSB_CURRENT_PAGE"))
     define("DSB_CURRENT_PAGE", basename($_SERVER['PHP_SELF']));
@@ -47,7 +49,7 @@ class DropShadowBoxes {
     private static $path = "dropshadowboxes/dropshadowboxes.php";
     private static $url = "http://www.stevenhenty.com";
     private static $slug = "dropshadowboxes";
-    private static $version = "0.2";
+    private static $version = "0.3";
 
 	static $add_scripts;
 	
@@ -61,6 +63,9 @@ class DropShadowBoxes {
 		//register scripts
 		
 		add_filter('the_posts', array('DropShadowBoxes', 'conditionally_add_scripts_and_styles')); // the_posts gets triggered before wp_head
+		
+		
+		
 		if(IS_ADMIN){
 			if(in_array(DSB_CURRENT_PAGE, array('post.php', 'page.php', 'page-new.php', 'post-new.php'))){
                         add_action('admin_footer',  array('DropShadowBoxes', 'add_mce_popup'));
@@ -71,6 +76,11 @@ class DropShadowBoxes {
 			
 			add_action('wp_ajax_dropshadowboxes_ajax_get_preview', array('DropShadowBoxes', 'dropshadowboxes_ajax_get_preview'));
 			
+		} else {
+			if( is_active_widget( '', '', 'dropshadowboxes_widget' ) ) { // check if search widget is used
+				 wp_enqueue_style('dropshadowboxes_css', plugins_url( 'css/dropshadowboxes.css', __FILE__ ));
+			}
+
 		}
 		
 		add_shortcode( 'dropshadowbox', array('DropShadowBoxes', 'render_shortcode') );
@@ -126,7 +136,7 @@ class DropShadowBoxes {
 			'rounded_corners' => true,
 			'inside_shadow' => true,
 			'outside_shadow' => true,
-			'effect' => "lifted"
+			'effect' => "lifted-both"
 
 		), $attributes));
 		 
@@ -379,6 +389,12 @@ class DropShadowBoxes {
 	 public function get_base_url(){
         $folder = basename(dirname(__FILE__));
         return plugins_url($folder);
+    }
+	
+	//Returns the physical path of the plugin's root folder
+    public function get_base_path(){
+        $folder = basename(dirname(__FILE__));
+        return WP_PLUGIN_DIR . "/" . $folder;
     }
 	
 	public static function _log( $message ) {
