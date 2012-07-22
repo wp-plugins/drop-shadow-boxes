@@ -114,6 +114,7 @@ http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples
 
 1. Example boxes
 2. Shortcode builder
+3. Widget options
 
 
 == ChangeLog ==
