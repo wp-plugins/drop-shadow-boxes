@@ -131,6 +131,7 @@ class DropShadowBoxes {
 		extract(shortcode_atts(array(
 			'align' => "none",
 			'width' => "300px",
+			'height' => "",
 			'border_width' => "2",
 			'border_color' => "#DDD",
 			'rounded_corners' => true,
@@ -214,7 +215,7 @@ class DropShadowBoxes {
 		
 
 		
-		$content = '<div class="dropshadowboxes-container ' . $container_classes. '" style="' . $container_style . '"><div class="dropshadowboxes-drop-shadow ' . $box_classes . '" style="' . $box_style . 'border:' . $border_width . 'px solid ' . $border_color. '">' . do_shortcode( $content ) . '</div></div>';
+		$content = '<div class="dropshadowboxes-container ' . $container_classes. '" style="' . $container_style . '"><div class="dropshadowboxes-drop-shadow ' . $box_classes . '" style="' . $box_style . 'border:' . $border_width . 'px solid ' . $border_color. '; height:' . $height . '">' . do_shortcode( $content ) . '</div></div>';
 		
 		return $content;
 				  
