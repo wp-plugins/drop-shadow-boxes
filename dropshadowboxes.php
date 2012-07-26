@@ -3,12 +3,12 @@
 Plugin Name: Drop Shadow Boxes
 Plugin URI: http://www.stevenhenty.com
 Description: Drop Shadow Boxes provides an easy way to highlight important content on your posts and pages. Includes a shortcode builder with a preview so you can test your box before adding it.
-Version: 0.3
+Version: 1.0
 Author: stevehenty
 Author URI: http://www.stevenhenty.com
 
 ------------------------------------------------------------------------
-Copyright 2011 Steven Henty
+Copyright 2012 Steven Henty
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -49,7 +49,7 @@ class DropShadowBoxes {
     private static $path = "dropshadowboxes/dropshadowboxes.php";
     private static $url = "http://www.stevenhenty.com";
     private static $slug = "dropshadowboxes";
-    private static $version = "0.3";
+    private static $version = "1.0";
 
 	static $add_scripts;
 	

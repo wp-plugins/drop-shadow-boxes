@@ -3,7 +3,7 @@ Contributors: stevehenty
 Tags: drop shadow,box shadow,perspective,raised,curl,lifted
 Requires at least: 3.0
 Tested up to: 3.4.1
-Stable tag: 0.3
+Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,8 +76,8 @@ Drop Shadow Boxes is currently available in English and Spanish (es_ES). The sho
 If you'd like to contribute other languages please get in touch with me here:
 http://www.stevenhenty.com/contact/ 
 
-= Beta Notice =
-Drop Shadow Boxes is currently in beta. If you find any that needs fixing, or if you have any ideas for improvements, please get in touch:
+= Support =
+If you find any that needs fixing, or if you have any ideas for improvements, please get in touch:
 http://www.stevenhenty.com/contact/ 
 
 Please also get in touch if you're using the latest version of your browser but the shadows are not displaying.
@@ -119,6 +119,9 @@ http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples
 
 == ChangeLog ==
 
+= 1.0 =
+Version 1.0 release
+
 = 0.3 =
 Added a widget
 
@@ -129,6 +132,9 @@ Added a widget
 * Initial beta release.
 
 == Upgrade Notice ==
+
+= 1.0 =
+Various bug fixes
 
 = 0.3 =
 Added a widget

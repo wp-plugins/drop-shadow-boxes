@@ -1,6 +1,6 @@
 <?php
 add_action( 'widgets_init', 'dropshadowboxes_register_widget' );
-DropShadowBoxes::_log("hello");
+
 if(!function_exists("dropshadowboxes_register_widget")){
 function dropshadowboxes_register_widget() {
     register_widget( 'DropShadowBoxesWidget' );
