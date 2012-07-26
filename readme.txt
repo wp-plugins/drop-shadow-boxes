@@ -16,6 +16,8 @@ Drop Shadow Boxes provides an easy way to highlight important content on your po
 Please see the following page for examples to see how it performs on your browser:
 http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples/
 
+If you like it please give it a rating ;)
+
 = Instructions =
 
 The plugin itself doesn't require any configuration. There isn't a setting page. 
