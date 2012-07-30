@@ -4,7 +4,7 @@ Plugin Name: Drop Shadow Boxes
 Plugin URI: http://www.stevenhenty.com
 Description: Drop Shadow Boxes provides an easy way to highlight important content on your posts and pages. Includes a shortcode builder with a preview so you can test your box before adding it.
 Version: 1.1
-Author: stevehenty
+Author: Steven Henty
 Author URI: http://www.stevenhenty.com
 
 ------------------------------------------------------------------------
