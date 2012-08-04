@@ -3,7 +3,7 @@ Contributors: stevehenty
 Tags: drop shadow,box shadow,perspective,raised,curl,lifted
 Requires at least: 3.0
 Tested up to: 3.4.1
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,9 +46,13 @@ align = [left/right/center/none] default: "none"
 
 width = [width plus units e.g. "250px" or "50%"] default: "300px"
 
+height = [width plus units e.g. "250px"] default: "auto"
+
+background_color = [colour code or name e.g. "#A8A8A8" or "blue"] default:"#ffffff"
+
 border_width = [width in pixels] default "2"
 
-border_color = [colour code or name e.g. "#A8A8A8" or "blue"] default:"#DDD"
+border_color = [colour code or name e.g. "#A8A8A8" or "blue"] default:"#dddddd"
 
 rounded_corners = [true/false] default: "true"
 
@@ -121,6 +125,11 @@ http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples
 
 == ChangeLog ==
 
+= 1.2 =
+1. added height attribute and options in the widget and shortcode builder
+1. added background color attribute and options in the widget and shortcode builder
+1. added color pickers
+
 = 1.1 =
 added height attibute
 
@@ -137,6 +146,11 @@ Added a widget
 * Initial beta release.
 
 == Upgrade Notice ==
+
+= 1.2 =
+1. added height attribute and options in the widget and shortcode builder
+1. added background color attribute and options in the widget and shortcode builder
+1. added color pickers
 
 = 1.1 =
 added height attibute

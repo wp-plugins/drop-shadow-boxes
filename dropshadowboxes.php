@@ -3,7 +3,7 @@
 Plugin Name: Drop Shadow Boxes
 Plugin URI: http://www.stevenhenty.com
 Description: Drop Shadow Boxes provides an easy way to highlight important content on your posts and pages. Includes a shortcode builder with a preview so you can test your box before adding it.
-Version: 1.1
+Version: 1.2
 Author: Steven Henty
 Author URI: http://www.stevenhenty.com
 
@@ -49,7 +49,7 @@ class DropShadowBoxes {
     private static $path = "dropshadowboxes/dropshadowboxes.php";
     private static $url = "http://www.stevenhenty.com";
     private static $slug = "dropshadowboxes";
-    private static $version = "1.1";
+    private static $version = "1.2";
 
 	static $add_scripts;
 	
@@ -75,6 +75,8 @@ class DropShadowBoxes {
             add_action('media_buttons_context', array('DropShadowBoxes', 'add_box_button'));
 			
 			add_action('wp_ajax_dropshadowboxes_ajax_get_preview', array('DropShadowBoxes', 'dropshadowboxes_ajax_get_preview'));
+			add_action('admin_print_scripts-widgets.php', array('DropShadowBoxes', 'load_color_picker_script'));
+			add_action('admin_print_styles-widgets.php',  array('DropShadowBoxes', 'load_color_picker_style'));
 			
 		} else {
 			if( is_active_widget( '', '', 'dropshadowboxes_widget' ) ) { // check if search widget is used
@@ -89,9 +91,17 @@ class DropShadowBoxes {
 
     } //end function init
 	
+	function load_color_picker_script() {
+		wp_enqueue_script('farbtastic');
+	}
+	function load_color_picker_style() {
+		wp_enqueue_style('farbtastic');	
+	}
+	
+	
 	function load_styles(){
        wp_enqueue_style('dropshadowboxes_css', plugins_url( 'css/dropshadowboxes.css', __FILE__ ));
-}
+	}
 
 	
 	public static function dropshadowboxes_ajax_get_preview() {
@@ -132,6 +142,7 @@ class DropShadowBoxes {
 			'align' => "none",
 			'width' => "300px",
 			'height' => "",
+			'background_color' => "white",
 			'border_width' => "2",
 			'border_color' => "#DDD",
 			'rounded_corners' => true,
@@ -215,7 +226,7 @@ class DropShadowBoxes {
 		
 
 		
-		$content = '<div class="dropshadowboxes-container ' . $container_classes. '" style="' . $container_style . '"><div class="dropshadowboxes-drop-shadow ' . $box_classes . '" style="' . $box_style . 'border:' . $border_width . 'px solid ' . $border_color. '; height:' . $height . '">' . do_shortcode( $content ) . '</div></div>';
+		$content = '<div class="dropshadowboxes-container ' . $container_classes. '" style="' . $container_style . '"><div class="dropshadowboxes-drop-shadow ' . $box_classes . '" style="' . $box_style . 'border:' . $border_width . 'px solid ' . $border_color. '; height:' . $height . ';background-color:' . $background_color . '">' . do_shortcode( $content ) . '</div></div>';
 		
 		return $content;
 				  
@@ -241,18 +252,24 @@ class DropShadowBoxes {
                 var box_alignment = jQuery("#box_alignment").val();
 				var box_effect = jQuery("#box_effect").val();
 				var box_width = jQuery("#box_width").val();
+				var box_height = jQuery("#box_height").val();
+				box_height = box_height == 'auto' ? '' : box_height + 'px';
+				var box_background_color = jQuery("#box_background_color").val();
+				
 				var box_width_units = jQuery("#box_width_units").val();
 				var border_width = jQuery("#border_width").val();
 				var border_color = jQuery("#border_color").val();
-
+				
                 var rounded_corners = jQuery("#rounded_corners").is(":checked");
 				var inside_shadow = jQuery("#inside_shadow").is(":checked");
 				var outside_shadow = jQuery("#outside_shadow").is(":checked");
 
+				var box_background_color_qs = "background_color=\"" + box_background_color + "\" ";
 				var box_alignment_qs = "align=\"" + box_alignment + "\" ";
 				var box_effect_qs = "effect=\"" + box_effect + "\" ";
 				var box_width_qs = "width=\"" + box_width + box_width_units + "\" ";
 				var border_width_qs = "border_width=\"" + border_width + "\" ";
+				var box_height_qs = "height=\"" + box_height + "\" ";
 				var border_color_qs = "border_color=\"" + border_color + "\" ";
 				
                 var rounded_corners_qs = !rounded_corners ? "rounded_corners=\"false\" " : "";
@@ -261,7 +278,7 @@ class DropShadowBoxes {
 				
 				var box_content = jQuery("#box_content").val();
 
-               return "[dropshadowbox " + box_alignment_qs + box_effect_qs + box_width_qs + border_width_qs + border_color_qs + rounded_corners_qs + inside_shadow_qs + outside_shadow_qs + "]" + box_content + "[/dropshadowbox]";
+               return "[dropshadowbox " + box_alignment_qs + box_effect_qs + box_width_qs + box_height_qs + box_background_color_qs + border_width_qs + border_color_qs + rounded_corners_qs + inside_shadow_qs + outside_shadow_qs + "]" + box_content + "[/dropshadowbox]";
             }
 			function SendDropShadowShortCodeToEditor(){
 				 window.send_to_editor( BuildDropShadowBoxShortcode() );
@@ -291,7 +308,33 @@ class DropShadowBoxes {
 				});	
 			
 			}
-			
+			jQuery(document).ready(function()
+				{
+					// colorpicker field
+					jQuery('.dropshadowboxes-color-picker').each(function(){
+						var $this = jQuery(this),
+							id = $this.attr('rel');
+
+						$this.farbtastic('#' + id);
+							
+					});
+					
+					jQuery('.dropshadowboxes-color-picker').hide();
+					
+					
+					 
+				});
+				function DSB_open_color_picker (id) {
+					
+					var input_position = jQuery('#' + id).position(); 
+					var picker = jQuery('.dropshadowboxes-color-picker[rel=' + id + ']'); 
+					if(!picker.is(':visible')) {
+						picker.css('left', input_position.left);
+						var a = picker.show('slow');
+					} else {
+						var a = picker.hide('slow');
+					}
+				}
         </script>
         <div id="add_dropshadowbox" style="display:none;width:640px;overflow:auto">
             <div id="dropshadowbox_shortcode_builder_container" class="wrap">
@@ -318,6 +361,10 @@ class DropShadowBoxes {
 						   <option value="horizontal-curve-both"><?php _e("Horizontal Curve (Both)", "dropshadowboxes"); ?> </option>
                         </select>
 						
+						<?php _e("Background:", "dropshadowboxes"); ?>
+						<input id="box_background_color" value="#ffffff" class="dropshadowboxes-color-input" type="text" onclick="DSB_open_color_picker('box_background_color')" />
+						<div class="dropshadowboxes-color-picker" rel="box_background_color"></div>
+						
 						<?php _e("Alignment:", "dropshadowboxes"); ?>
 						<select id="box_alignment">
 							<option value="none"><?php _e("None", "dropshadowboxes"); ?> </option>
@@ -326,6 +373,16 @@ class DropShadowBoxes {
 							<option value="center"><?php _e("Center", "dropshadowboxes"); ?> </option>
                         </select>
 						
+						
+						
+						
+                    </div>
+
+
+					<div style="padding:15px 15px 0 15px;">
+						<?php _e("Height:", "dropshadowboxes"); ?>
+						<input id="box_height" value="auto" class="small-text" type="text" />
+						
 						<?php _e("Width:", "dropshadowboxes"); ?>
 						<input id="box_width" value="250" class="small-text" type="text" />
 						<select id="box_width_units">
@@ -333,20 +390,9 @@ class DropShadowBoxes {
 							<option value="%"><?php _e("%", "dropshadowboxes"); ?> </option>
                         </select>
 						
-                    </div>
-
-
-					<div style="padding:15px 15px 0 15px;">
-                        <?php _e("Border width (pixels):", "dropshadowboxes"); ?><input id="border_width" value="1" class="small-text" type="text" /> &nbsp;&nbsp;&nbsp;
-                        <?php _e("Border color:", "dropshadowboxes"); ?>  
-						<select id="border_color">
-							<option value="#DDD"><?php _e("Gray", "dropshadowboxes"); ?> </option>
-							<option value="red"><?php _e("Red", "dropshadowboxes"); ?> </option>
-							<option value="blue"><?php _e("Blue", "dropshadowboxes"); ?> </option>
-							<option value="green"><?php _e("Green", "dropshadowboxes"); ?> </option>
-							<option value="black"><?php _e("Black", "dropshadowboxes"); ?> </option>
-							<option value="white"><?php _e("White", "dropshadowboxes"); ?> </option>
-                        </select>
+                        <?php _e("Border (pixels):", "dropshadowboxes"); ?><input id="border_width" value="1" class="small-text" type="text" />
+						<input id="border_color" value="#dddddd" class="dropshadowboxes-color-input" type="text" onclick="DSB_open_color_picker('border_color')" />
+						<div class="dropshadowboxes-color-picker" rel="border_color"></div>
                     </div>
 					
                     <div style="padding:15px 15px 0 15px;">
