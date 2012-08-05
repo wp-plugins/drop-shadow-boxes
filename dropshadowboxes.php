@@ -3,7 +3,7 @@
 Plugin Name: Drop Shadow Boxes
 Plugin URI: http://www.stevenhenty.com
 Description: Drop Shadow Boxes provides an easy way to highlight important content on your posts and pages. Includes a shortcode builder with a preview so you can test your box before adding it.
-Version: 1.2
+Version: 1.2.1
 Author: Steven Henty
 Author URI: http://www.stevenhenty.com
 
@@ -49,7 +49,7 @@ class DropShadowBoxes {
     private static $path = "dropshadowboxes/dropshadowboxes.php";
     private static $url = "http://www.stevenhenty.com";
     private static $slug = "dropshadowboxes";
-    private static $version = "1.2";
+    private static $version = "1.2.1";
 
 	static $add_scripts;
 	
@@ -77,6 +77,8 @@ class DropShadowBoxes {
 			add_action('wp_ajax_dropshadowboxes_ajax_get_preview', array('DropShadowBoxes', 'dropshadowboxes_ajax_get_preview'));
 			add_action('admin_print_scripts-widgets.php', array('DropShadowBoxes', 'load_color_picker_script'));
 			add_action('admin_print_styles-widgets.php',  array('DropShadowBoxes', 'load_color_picker_style'));
+			add_action('admin_print_scripts-post.php', array('DropShadowBoxes', 'load_color_picker_script'));
+			add_action('admin_print_styles-post.php',  array('DropShadowBoxes', 'load_color_picker_style'));
 			
 		} else {
 			if( is_active_widget( '', '', 'dropshadowboxes_widget' ) ) { // check if search widget is used
