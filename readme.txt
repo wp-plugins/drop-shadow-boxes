@@ -125,6 +125,9 @@ http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples
 
 == ChangeLog ==
 
+= 1.2.3 =
+Fixed an issue that affected the display of the widget in some themes
+
 = 1.2.2 =
 Fixed an issue that affected the creation of new pages and posts
 
@@ -152,6 +155,9 @@ Added a widget
 * Initial beta release.
 
 == Upgrade Notice ==
+
+= 1.2.3 =
+Fixed an issue that affected the display of the widget in some themes
 
 = 1.2.2 =
 Fixed an issue that affected the creation of new pages and posts

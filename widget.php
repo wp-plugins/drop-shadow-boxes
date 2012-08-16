@@ -55,9 +55,9 @@ if(!class_exists("DropShadowBoxesWidget")){
 			$shortcode = "[dropshadowbox align=\"{$align}\" width=\"{$width}\" height=\"{$height}\" border_width=\"{$border_width}\" border_color=\"{$border_color}\" rounded_corners=\"{$rounded_corners}\" inside_shadow=\"{$inside_shadow}\" outside_shadow=\"{$outside_shadow}\" effect=\"{$effect}\" background_color=\"{$background_color}\"  ]{$box_content}[/dropshadowbox]";
 
 			echo do_shortcode($shortcode);
-			return;
-			
+
 			echo $after_widget;
+			return;
 		}
 
 		function update( $new_instance, $old_instance ) {
