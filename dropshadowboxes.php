@@ -3,7 +3,7 @@
 Plugin Name: Drop Shadow Boxes
 Plugin URI: http://www.stevenhenty.com
 Description: Drop Shadow Boxes provides an easy way to highlight important content on your posts and pages. Includes a shortcode builder with a preview so you can test your box before adding it.
-Version: 1.2.3
+Version: 1.3
 Author: Steven Henty
 Author URI: http://www.stevenhenty.com
 
@@ -38,6 +38,8 @@ if(!defined("DSB_CURRENT_PAGE"))
 if(!defined("IS_ADMIN"))
     define("IS_ADMIN",  is_admin());
 
+	
+
 add_action('init',  array('DropShadowBoxes', 'init'));
 
 
@@ -49,9 +51,8 @@ class DropShadowBoxes {
     private static $path = "dropshadowboxes/dropshadowboxes.php";
     private static $url = "http://www.stevenhenty.com";
     private static $slug = "dropshadowboxes";
-    private static $version = "1.2.3";
+    private static $version = "1.3";
 
-	static $add_scripts;
 	
 	
     //Plugin starting point. Will load appropriate files
@@ -62,27 +63,29 @@ class DropShadowBoxes {
 			
 		//register scripts
 		
-		add_filter('the_posts', array('DropShadowBoxes', 'conditionally_add_scripts_and_styles')); // the_posts gets triggered before wp_head
+		
 		
 		
 		
 		if(IS_ADMIN){
-			if(in_array(DSB_CURRENT_PAGE, array('post.php', 'page.php', 'page-new.php', 'post-new.php'))){
-                        add_action('admin_footer',  array('DropShadowBoxes', 'add_mce_popup'));
-						add_action('admin_enqueue_scripts', array('DropShadowBoxes', 'load_styles'));
+			if(in_array(DSB_CURRENT_PAGE, array('post.php', 'page.php', 'page-new.php', 'post-new.php','widgets.php','admin.php'))){
+                        
+						add_action('admin_print_styles',  array('DropShadowBoxes', 'load_color_picker_style'));
+						add_action('admin_print_scripts', array('DropShadowBoxes', 'load_color_picker_script'));
                     }
-			//Adding "box" button
-            add_action('media_buttons_context', array('DropShadowBoxes', 'add_box_button'));
+			if(in_array(DSB_CURRENT_PAGE, array('post.php', 'page.php', 'page-new.php', 'post-new.php'))){
+                        //Adding "box" button
+						add_action('media_buttons_context', array('DropShadowBoxes', 'add_box_button'));
+						add_action('admin_footer',  array('DropShadowBoxes', 'add_mce_popup'));
+						add_action('admin_enqueue_scripts', array('DropShadowBoxes', 'load_styles'));
+                    }		
 			
 			add_action('wp_ajax_dropshadowboxes_ajax_get_preview', array('DropShadowBoxes', 'dropshadowboxes_ajax_get_preview'));
-			add_action('admin_print_scripts-widgets.php', array('DropShadowBoxes', 'load_color_picker_script'));
-			add_action('admin_print_styles-widgets.php',  array('DropShadowBoxes', 'load_color_picker_style'));
-			add_action('admin_print_scripts-post.php', array('DropShadowBoxes', 'load_color_picker_script'));
-			add_action('admin_print_styles-post.php',  array('DropShadowBoxes', 'load_color_picker_style'));
-			add_action('admin_print_scripts-post-new.php', array('DropShadowBoxes', 'load_color_picker_script'));
-			add_action('admin_print_styles-post-new.php',  array('DropShadowBoxes', 'load_color_picker_style'));
+
 			
 		} else {
+			add_filter('the_posts', array('DropShadowBoxes', 'conditionally_add_scripts_and_styles')); // the_posts gets triggered before wp_head
+			
 			if( is_active_widget( '', '', 'dropshadowboxes_widget' ) ) { // check if search widget is used
 				 wp_enqueue_style('dropshadowboxes_css', plugins_url( 'css/dropshadowboxes.css', __FILE__ ));
 			}
@@ -319,7 +322,8 @@ class DropShadowBoxes {
 						var $this = jQuery(this),
 							id = $this.attr('rel');
 
-						$this.farbtastic('#' + id);
+						
+							$this.farbtastic('#' + id);
 							
 					});
 					

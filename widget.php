@@ -106,22 +106,21 @@ if(!class_exists("DropShadowBoxesWidget")){
 				jQuery(document).ready(function()
 				{
 					// colorpicker field
-					jQuery('.DDS-color-picker').each(function(){
+					jQuery('.dropshadoboxes-color-picker').each(function(){
 						var $this = jQuery(this),
 							id = $this.attr('rel');
-
-						$this.farbtastic('#' + id);
+						
+							$this.farbtastic('#' + id);
 							
 					});
 					
-					jQuery('.DDS-color-picker').hide();
+					jQuery('.dropshadoboxes-color-picker').hide();
 					
 					
 					 
 				});
-				function DSB_open_color_picker (id) {
-					var obj = jQuery('.DDS-color-picker[rel=' + id + ']'); if(!obj.is(':visible')) {var a = obj.show('slow');} else {var a = obj.hide('slow');}
-				}
+
+				
 				
 			//]]>   
 			</script>		
@@ -174,8 +173,8 @@ if(!class_exists("DropShadowBoxesWidget")){
 				<input id="<?php echo $this->get_field_id( 'border_width' ); ?>" name="<?php echo $this->get_field_name( 'border_width' ); ?>" value="<?php echo $instance['border_width']; ?>" class="small-text"/><?php _e("pixels", "dropshadowboxes"); ?>		
 				
 				
-				<input class="small-text" id="<?php echo $this->get_field_id('border_color'); ?>" name="<?php echo $this->get_field_name('border_color'); ?>" type="text" value="<?php if($border_color) { echo $border_color; } else { echo '#DDD';  }?>"  onclick="DSB_open_color_picker('<?php echo $this->get_field_id('border_color'); ?>');" />
-				<div class="DDS-color-picker" rel="<?php echo $this->get_field_id('border_color'); ?>"></div>
+				<input class="small-text" id="<?php echo $this->get_field_id('border_color'); ?>" name="<?php echo $this->get_field_name('border_color'); ?>" type="text" value="<?php if($border_color) { echo $border_color; } else { echo '#DDD';  }?>"  onclick="var $this = jQuery(this);id = $this.attr('id');var obj = jQuery('.dropshadoboxes-color-picker[rel=' + id + ']'); if(!obj.is(':visible')) {var a = obj.show('slow');} else {var a = obj.hide('slow');}" />
+				<div class="dropshadoboxes-color-picker" rel="<?php echo $this->get_field_id('border_color'); ?>"></div>
 			</p>
 			<p>
 
@@ -183,8 +182,8 @@ if(!class_exists("DropShadowBoxesWidget")){
 				
 				
 		 
-				  <input class="widefat" id="<?php echo $this->get_field_id('background_color'); ?>" name="<?php echo $this->get_field_name('background_color'); ?>" type="text" value="<?php if($background_color) { echo $background_color; } else { echo '#fff';  }?>" onclick="DSB_open_color_picker('<?php echo $this->get_field_id('background_color'); ?>');" />
-				<div class="DDS-color-picker" rel="<?php echo $this->get_field_id('background_color'); ?>"></div>
+				  <input class="widefat" id="<?php echo $this->get_field_id('background_color'); ?>" name="<?php echo $this->get_field_name('background_color'); ?>" type="text" value="<?php if($background_color) { echo $background_color; } else { echo '#fff';  }?>" onclick="var $this = jQuery(this);id = $this.attr('id');var obj = jQuery('.dropshadoboxes-color-picker[rel=' + id + ']'); if(!obj.is(':visible')) {var a = obj.show('slow');} else {var a = obj.hide('slow');}" />
+				<div class="dropshadoboxes-color-picker" rel="<?php echo $this->get_field_id('background_color'); ?>"></div>
 				</p>
 	 
 			</p>

@@ -3,7 +3,7 @@ Contributors: stevehenty
 Tags: drop shadow,box shadow,perspective,raised,curl,lifted
 Requires at least: 3.0
 Tested up to: 3.4.1
-Stable tag: 1.2.3
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,11 +11,11 @@ Provides an easy way to highlight important content on your posts and pages insi
 
 == Description ==
 
-Drop Shadow Boxes provides an easy way to highlight important content on your posts, pages and widget areas. Personalise the box with drop shadow effects like raised, lifted and perspective and choose whether the box has an inside shadow, outside shadow and rounded corners. The plugin includes a widget and shortcode builder with a preview so you can test your box before adding it. The shadows will display correctly on most browsers - some older version of Internet Explorer may not display the shadows - but they will display the box with the content so nothing will be missing on the page. 
+Drop Shadow Boxes provides an easy way to highlight important content on your posts, pages and widget areas. Personalise the box with drop shadow effects like raised, lifted and perspective and choose whether the box has an inside shadow, outside shadow and rounded corners. The plugin includes a widget and shortcode builder with a preview so you can test your box before adding it. The shadows will display correctly on most browsers - some older versions of Internet Explorer may not display the shadows - but they will display the box with the content so nothing will be missing on the page. 
 
 Please see the following page for examples to see how it performs on your browser:
 http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples/
- 
+
 If you like it please give it a rating ;)
 
 = Instructions =
@@ -125,6 +125,11 @@ http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples
 
 == ChangeLog ==
 
+= 1.3 =
+1. added compatibility with the Ultimatum theme
+1. fixed the rendering of the perspective-left effect
+1. fixed the colour picker on the widget which failed to open on page load
+
 = 1.2.3 =
 Fixed an issue that affected the display of the widget in some themes
 
@@ -155,6 +160,11 @@ Added a widget
 * Initial beta release.
 
 == Upgrade Notice ==
+
+= 1.3 =
+1. added compatibility with the Ultimatum theme
+1. fixed the rendering of the perspective-left effect
+1. fixed the colour picker on the widget which failed to open on page load
 
 = 1.2.3 =
 Fixed an issue that affected the display of the widget in some themes
