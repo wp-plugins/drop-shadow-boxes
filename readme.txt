@@ -1,5 +1,6 @@
 === Drop Shadow Boxes ===
 Contributors: stevehenty
+Donate link: http://www.stevenhenty.com/products/wordpress-plugins/donate
 Tags: drop shadow,box shadow,perspective,raised,curl,lifted
 Requires at least: 3.0
 Tested up to: 3.4.1
