@@ -4,7 +4,7 @@ Donate link: http://www.stevenhenty.com/products/wordpress-plugins/donate
 Tags: drop shadow,box shadow,perspective,raised,curl,lifted
 Requires at least: 3.0
 Tested up to: 3.4.1
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,8 @@ inside_shadow = [true/false] default: "true"
 
 outside_shadow = [true/false] default: "true"
 
+effect_shadow_color = [red/green/blue/yellow/white] default: gray (known issue: this color option will not worrk for the effect "raised")
+
 effect = [name of the effect] default: "lifted-both"
 
 Possible vlaues for the effect attribute:
@@ -76,12 +78,14 @@ vertical-curve-both
 horizontal-curve-bottom
 horizontal-curve-both
 
+
 = Language Versions =
 
 Drop Shadow Boxes is currently available in English and Spanish (es_ES). The shortcode builder will automatically switch to Spanish if your WordPress installation is in Spanish (es_ES).
 
 If you'd like to contribute other languages please get in touch with me here:
 http://www.stevenhenty.com/contact/ 
+You'll find the .po file in the plugin root.
 
 = Support =
 If you find any that needs fixing, or if you have any ideas for improvements, please get in touch:
@@ -105,8 +109,17 @@ http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples
 = How do I open the shortcode builder? =
 While you're editing a post or page you can open the shortcode builder by clicking on the box icon next to the upload media button above the toolbar.
 
+= How do I add links and other formatting inside the box? =
+Once you've added the shortcode to the page/post you can edit the contents just like any other content.
+
+= How do two or more boxes side by side? =
+Align the second box left.
+
+= Will it work on a dark background? =
+Yes, you'll just need to set the effect_shadow_color shortcode attribute to "white".
+
 = Can I edit the shadow effect? =
-The shortcode builder offers quite a few options. If you need further customisation you'll need to edit the css file.
+The shortcode offers quite a few options. If you need further customisation you'll need to override the css classes in your theme (usually style.css).
 
 = Will the css file be loaded on all pages or only when it's needed? =
 The css file will only be loaded when it's needed - when there's a [dropshadowbox] shortcode on the page or post.
@@ -125,6 +138,11 @@ http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples
 
 
 == ChangeLog ==
+
+= 1.4 =
+1. added shortcode attribute effect_shadow_color
+1. fixed alignment to allow boxes to sit side by side
+1. fixed plugin URI to point directly to the plugin page
 
 = 1.3 =
 1. added compatibility with the Ultimatum theme
@@ -161,6 +179,10 @@ Added a widget
 * Initial beta release.
 
 == Upgrade Notice ==
+
+= 1.4 =
+1. added shortcode attribute effect_color
+1. fixed alignment to allow boxes to sit side by side
 
 = 1.3 =
 1. added compatibility with the Ultimatum theme

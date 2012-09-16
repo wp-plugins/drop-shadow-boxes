@@ -1,45 +1,51 @@
 
-.dropshadowboxes-container {
-	clear: both;
+/********************************************
+ *                  Box model
+ ********************************************/
 
-  
+.dropshadowboxes-container {
+    clear: both;
+    display: block;
     position: relative;
- 
     z-index: 1;
 }
 .dropshadowboxes-container:after {
-    clear: both;
-    content: "";
+    content: ".";
     display: block;
-    font-size: 0;
     height: 0;
+    clear: both;
     visibility: hidden;
 }
-
-.dropshadowboxes-left{
-	float:left;
-	margin-right:10px;
-}
-.dropshadowboxes-right{
-	float:right;
-	margin-left:10px;
-}
 .dropshadowboxes-container.dropshadowboxes-center{
-	width:100%;
+    width:100%;
 }
 .dropshadowboxes-container.dropshadowboxes-center > DIV.dropshadowboxes-drop-shadow {
-	margin-left:auto;
-	margin-right:auto;
-	
+    margin-left:auto;
+    margin-right:auto;
+    
 }
 .dropshadowboxes-drop-shadow {
     background: none repeat scroll 0 0;
     padding:10px;
-	margin: 10px 0 10px 0;
+    margin: 10px 0 10px 0;
     position: relative;
-
- 
+    border-radius:3px
 }
+
+.dropshadowboxes-left{
+    clear: none;
+    float:left;
+    margin-right:10px;
+}
+.dropshadowboxes-right{
+    clear: none;
+    float:right;
+    margin-left:10px;
+}
+
+/********************************************
+ *                  Corners
+ ********************************************/
 
 .dropshadowboxes-rounded-corners{
 	-moz-border-radius-topleft: 5px;
@@ -58,7 +64,9 @@
 
 
 
-
+/********************************************
+ *                  Other shadows
+ ********************************************/
 
 .dropshadowboxes-inside-shadow{
 	-webkit-box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
@@ -75,6 +83,10 @@
 	   -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(0, 0, 0, 0.1);
 			box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(0, 0, 0, 0.1);
 }
+
+/********************************************
+ *                  Effects
+ ********************************************/
 
 .dropshadowboxes-drop-shadow:before, .dropshadowboxes-drop-shadow:after {
     content: "";
@@ -127,9 +139,9 @@
     right: 10px;
 }
 .dropshadowboxes-lifted-both:before, .dropshadowboxes-lifted-both:after {
-    -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
-	   -moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
-			box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+    -webkit-box-shadow:0 15px 10px;
+	   -moz-box-shadow:0 15px 10px;
+			box-shadow:0 15px 10px;
             -webkit-transform:rotate(-3deg);
                -moz-transform:rotate(-3deg);
                 -ms-transform:rotate(-3deg);
@@ -158,16 +170,16 @@
     border-radius:0 0 120px 120px / 0 0 6px 6px;
 }
 .dropshadowboxes-curled:before, .dropshadowboxes-curled:after {
-    -webkit-box-shadow:0 8px 12px rgba(0, 0, 0, 0.5);
-	   -moz-box-shadow:0 8px 12px rgba(0, 0, 0, 0.5);
-			box-shadow:0 8px 12px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow:0 8px 12px;
+	   -moz-box-shadow:0 8px 12px;
+			box-shadow:0 8px 12px;
             -webkit-transform:skew(-8deg) rotate(-3deg);
                -moz-transform:skew(-8deg) rotate(-3deg);
                 -ms-transform:skew(-8deg) rotate(-3deg);
                  -o-transform:skew(-8deg) rotate(-3deg);
                     transform:skew(-8deg) rotate(-3deg);
     bottom: 12px;
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+   
     height: 55%;
     left: 10px;
     max-height: 100px;
@@ -184,9 +196,9 @@
     right: 10px;
 }
 .dropshadowboxes-perspective-left:before {
-    -webkit-box-shadow:-80px 0 8px rgba(0, 0, 0, 0.4);
-	   -moz-box-shadow:-80px 0 8px rgba(0, 0, 0, 0.4);
-			box-shadow:-80px 0 8px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow:-80px 0 8px ;
+	   -moz-box-shadow:-80px 0 8px;
+			box-shadow:-80px 0 8px ;
 	-webkit-transform:skew(50deg);
 	   -moz-transform:skew(50deg);
 		-ms-transform:skew(50deg);
@@ -199,18 +211,18 @@
 			transform-origin:0 100%;
     bottom: 3px;
     height: 35%;
-    left: 80px;
-    max-height: 50px;
-    max-width: 200px;
+    left: 70px;
     width: 50%;
 }
+
+
 .dropshadowboxes-perspective-left:after {
-    display: none;
+    /*display: none;*/
 }
 .dropshadowboxes-perspective-right:before {
-    -webkit-box-shadow:80px 0 8px rgba(0, 0, 0, 0.4);
-	   -moz-box-shadow:80px 0 8px rgba(0, 0, 0, 0.4);
-			box-shadow:80px 0 8px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow:80px 0 8px;
+	   -moz-box-shadow:80px 0 8px;
+			box-shadow:80px 0 8px;
 	-webkit-transform:skew(-50deg);
 	   -moz-transform:skew(-50deg);
 		-ms-transform:skew(-50deg);
@@ -260,9 +272,9 @@
     left: 0;
     right: 50%;
     top: 10px;
-	-webkit-box-shadow:0 0 15px rgba(0,0,0,0.6);
-		-moz-box-shadow:0 0 15px rgba(0,0,0,0.6);
-		box-shadow:0 0 15px rgba(0,0,0,0.6);
+	-webkit-box-shadow:0 0 15px;
+		-moz-box-shadow:0 0 15px;
+		box-shadow:0 0 15px;
 }
 .dropshadowboxes-curved-vertical-2:before {
     right: 0;
@@ -283,9 +295,46 @@
     right: 10px;
     top: 0;
 }
+
+/********************************************
+ *                  Colors
+ ********************************************/
+
+.dropshadowboxes-effect-blue:before,
+.dropshadowboxes-effect-blue:after {
+   color:rgba(0, 0, 255, 0.6);
+}
+.dropshadowboxes-effect-white:before,
+.dropshadowboxes-effect-white:after {
+   color:rgba(255, 255, 255, 0.6);
+}
+.dropshadowboxes-effect-yellow:before,
+.dropshadowboxes-effect-yellow:after {
+   color:rgba(255, 255, 0, 0.6);
+}
+.dropshadowboxes-effect-red:before,
+.dropshadowboxes-effect-red:after {
+   color:rgba(255, 0, 0, 0.6);
+}
+.dropshadowboxes-effect-green:before,
+.dropshadowboxes-effect-green:after {
+   color:rgba(0, 255, 0, 0.6);
+}
+.dropshadowboxes-effect-default:before,
+.dropshadowboxes-effect-default:after  {
+   color:rgba(0, 0, 0, 0.5);
+}
+
+
+/********************************************
+ *                  Admin UI
+ ********************************************/
+
 .dropshadowboxes-color-picker {
 	position:absolute;
 }
 .dropshadowboxes-color-input {
 	width:70px;
 }
+
+
