@@ -3,7 +3,7 @@
 Plugin Name: Drop Shadow Boxes
 Plugin URI: http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/
 Description: Drop Shadow Boxes provides an easy way to highlight important content on your posts and pages. Includes a shortcode builder with a preview so you can test your box before adding it.
-Version: 1.4
+Version: 1.4.1
 Author: Steven Henty
 Author URI: http://www.stevenhenty.com
 
@@ -26,12 +26,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 */
 
 
-
-
 //------------------------------------------
-
-
-
 
 
 if(!defined("DSB_CURRENT_PAGE"))
@@ -39,11 +34,7 @@ if(!defined("DSB_CURRENT_PAGE"))
 if(!defined("IS_ADMIN"))
     define("IS_ADMIN",  is_admin());
 
-
-
 add_action('init',  array('DropShadowBoxes', 'init'));
-
-
 
 
 //------------------------------------------
@@ -470,7 +461,6 @@ if ( ! class_exists( 'DropShadowBoxes' ) ) {
 	} //end class
 
 	require_once(DropShadowBoxes::get_base_path() . "/widget.php");
-	// Store a reference to the plugin in GLOBALS so that unit tests can access it - not included in the SVN
-	$GLOBALS['dropshadowboxes'] = new DropShadowBoxes();
+
 } //end if
 
