@@ -3,8 +3,8 @@ Contributors: stevehenty
 Donate link: http://www.stevenhenty.com/products/wordpress-plugins/donate
 Tags: drop shadow,box shadow,perspective,raised,curl,lifted
 Requires at least: 3.0
-Tested up to: 3.5
-Stable tag: 1.4.1
+Tested up to: 3.5.1
+Stable tag: 1.4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -139,6 +139,10 @@ http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples
 
 == ChangeLog ==
 
+= 1.4.2 =
+1. changed icon for the new WordPress UI
+1. fixed issue with multisite WordPress where icon wasn't appearing
+
 = 1.4 =
 1. added shortcode attribute effect_shadow_color
 1. fixed alignment to allow boxes to sit side by side
@@ -179,6 +183,10 @@ Added a widget
 * Initial beta release.
 
 == Upgrade Notice ==
+
+= 1.4.2 =
+1. changed icon for the new WordPress UI
+1. fixed issue with multisite WordPress where icon wasn't appearing
 
 = 1.4 =
 1. added shortcode attribute effect_color

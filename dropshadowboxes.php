@@ -3,12 +3,12 @@
 Plugin Name: Drop Shadow Boxes
 Plugin URI: http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/
 Description: Drop Shadow Boxes provides an easy way to highlight important content on your posts and pages. Includes a shortcode builder with a preview so you can test your box before adding it.
-Version: 1.4.1
+Version: 1.4.2
 Author: Steven Henty
 Author URI: http://www.stevenhenty.com
 
 ------------------------------------------------------------------------
-Copyright 2012 Steven Henty
+Copyright 2012-2013 Steven Henty
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -234,16 +234,39 @@ if ( ! class_exists( 'DropShadowBoxes' ) ) {
 		} // end function gf_polls_poll_shortcode
 
 		//Action target that adds the "Insert dropshadowbox" button to the post/page edit screen
-			public static function add_box_button($context){
+		public static function add_box_button($context){
 
-					$is_post_edit_page = in_array(DSB_CURRENT_PAGE, array('post.php', 'page.php', 'page-new.php', 'post-new.php'));
-					if(!$is_post_edit_page)
-							return $context;
+				$is_post_edit_page = in_array(DSB_CURRENT_PAGE, array('post.php', 'page.php', 'page-new.php', 'post-new.php'));
+				if(!$is_post_edit_page)
+						return $context;
 
+				// do a version check for the new 3.5 UI
+				$version    = get_bloginfo('version');
+
+				if ($version < 3.5) {
+					// show button for v 3.4 and below
 					$image_btn = self::get_base_url() . "/images/box-button.png";
-					$out = '<a href="#TB_inline?&height=555&width=640&inlineId=add_dropshadowbox" class="thickbox" id="add_box" title="' . __("Add Drop Shadow Box", 'dropshadowboxes') . '"><img src="'.$image_btn.'" alt="' . __("Add Drop-Shadow Box", 'dropshadowboxes') . '" /></a>';
-					return $context . $out;
-			}
+					$out = '<a href="#TB_inline?&height=555&width=640&inlineId=add_dropshadowbox" class="thickbox" id="add_box" title="' . __("Add Drop-Shadow Box", 'dropshadowboxes') . '"><img src="'.$image_btn.'" alt="' . __("Add Drop-Shadow Box", 'dropshadowboxes') . '" /></a>';
+
+				} else {
+					// display button matching new UI
+					$out = '<style>.dropshadowboxes_media_icon{
+					background:url(' . self::get_base_url() . '/images/box-button.png) no-repeat top left;
+					display: inline-block;
+					height: 16px;
+					margin: 0 2px 0 0;
+					vertical-align: text-top;
+					width: 16px;
+					}
+					.wp-core-ui a.dropshadowboxes_media_link{
+					 padding-left: 0.4em;
+					}
+				 </style>
+				  <a href="#TB_inline?&height=555&width=640&inlineId=add_dropshadowbox" class="thickbox button dropshadowboxes_media_link" id="add_box" title="' . __("Add Drop Shadow Box", 'dropshadowboxes') . '"><span class="dropshadowboxes_media_icon "></span> ' . __("Add Box", "dropshadowboxes") . '</a>';
+				}
+
+			return $context . $out;
+		}
 
 		 //Action target that displays the popup to insert a form to a post/page
 			function add_mce_popup(){
