@@ -3,7 +3,7 @@
 Plugin Name: Drop Shadow Boxes
 Plugin URI: http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/
 Description: Drop Shadow Boxes provides an easy way to highlight important content on your posts and pages. Includes a shortcode builder with a preview so you can test your box before adding it.
-Version: 1.4.2
+Version: 1.4.3
 Author: Steven Henty
 Author URI: http://www.stevenhenty.com
 
@@ -47,7 +47,7 @@ if ( ! class_exists( 'DropShadowBoxes' ) ) {
 			public static function init(){
 
 
-			load_plugin_textdomain( 'dropshadowboxes', false, '/dropshadowboxes/languages' );
+			load_plugin_textdomain( 'dropshadowboxes', false, '/drop-shadow-boxes/languages' );
 
 			//register scripts
 
@@ -63,7 +63,7 @@ if ( ! class_exists( 'DropShadowBoxes' ) ) {
 											}
 				if(in_array(DSB_CURRENT_PAGE, array('post.php', 'page.php', 'page-new.php', 'post-new.php'))){
 													//Adding "box" button
-							add_action('media_buttons_context', array('DropShadowBoxes', 'add_box_button'));
+                            add_action('media_buttons', array('DropShadowBoxes', 'add_box_button'), 20);
 							add_action('admin_footer',  array('DropShadowBoxes', 'add_mce_popup'));
 							add_action('admin_enqueue_scripts', array('DropShadowBoxes', 'load_styles'));
 											}
@@ -234,7 +234,7 @@ if ( ! class_exists( 'DropShadowBoxes' ) ) {
 		} // end function gf_polls_poll_shortcode
 
 		//Action target that adds the "Insert dropshadowbox" button to the post/page edit screen
-		public static function add_box_button($context){
+		public static function add_box_button(){
 
 				$is_post_edit_page = in_array(DSB_CURRENT_PAGE, array('post.php', 'page.php', 'page-new.php', 'post-new.php'));
 				if(!$is_post_edit_page)
@@ -265,7 +265,7 @@ if ( ! class_exists( 'DropShadowBoxes' ) ) {
 				  <a href="#TB_inline?&height=555&width=640&inlineId=add_dropshadowbox" class="thickbox button dropshadowboxes_media_link" id="add_box" title="' . __("Add Drop Shadow Box", 'dropshadowboxes') . '"><span class="dropshadowboxes_media_icon "></span> ' . __("Add Box", "dropshadowboxes") . '</a>';
 				}
 
-			return $context . $out;
+			echo $out;
 		}
 
 		 //Action target that displays the popup to insert a form to a post/page

@@ -4,7 +4,7 @@ Donate link: http://www.stevenhenty.com/products/wordpress-plugins/donate
 Tags: drop shadow,box shadow,perspective,raised,curl,lifted
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 1.4.2
+Stable tag: 1.4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Provides an easy way to highlight important content on your posts and pages insi
 
 == Description ==
 
-Drop Shadow Boxes provides an easy way to highlight important content on your posts, pages and widget areas. Personalise the box with drop shadow effects like raised, lifted and perspective and choose whether the box has an inside shadow, outside shadow and rounded corners. The plugin includes a widget and shortcode builder with a preview so you can test your box before adding it. The shadows will display correctly on most browsers - some older versions of Internet Explorer may not display the shadows - but they will display the box with the content so nothing will be missing on the page. 
+Drop Shadow Boxes provides an easy way to highlight important content on your posts, pages and widget areas. Personalise the box with drop shadow effects like raised, lifted and perspective and choose whether the box has an inside shadow, outside shadow and rounded corners. The plugin includes a widget and shortcode builder with a preview so you can test your box before adding it. The shadows will display correctly on most browsers - some older versions of Internet Explorer may not display the shadows - but they will display the box with the content so nothing will be missing on the page.
 
 Please see the following page for examples to see how it performs on your browser:
 http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples/
@@ -21,9 +21,9 @@ If you like it please give it a rating ;)
 
 = Instructions =
 
-The plugin itself doesn't require any configuration. There isn't a setting page. 
+The plugin itself doesn't require any configuration. There isn't a setting page.
 
-You can access the widget from the Widgets dashboard page - drag, drop and configure as you would any other widget. 
+You can access the widget from the Widgets dashboard page - drag, drop and configure as you would any other widget.
 
 The shortcode builder allows you to add Drop Shadow Boxes to posts and pages. You can access from the media toolbar while you're editing the post/page by clicking on the box icon next to the upload/insert media button.
 
@@ -84,12 +84,12 @@ horizontal-curve-both
 Drop Shadow Boxes is currently available in English and Spanish (es_ES). The shortcode builder will automatically switch to Spanish if your WordPress installation is in Spanish (es_ES).
 
 If you'd like to contribute other languages please get in touch with me here:
-http://www.stevenhenty.com/contact/ 
+http://www.stevenhenty.com/contact/
 You'll find the .po file in the plugin root.
 
 = Support =
 If you find any that needs fixing, or if you have any ideas for improvements, please get in touch:
-http://www.stevenhenty.com/contact/ 
+http://www.stevenhenty.com/contact/
 
 Please also get in touch if you're using the latest version of your browser but the shadows are not displaying.
 
@@ -138,6 +138,10 @@ http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples
 
 
 == ChangeLog ==
+
+= 1.4.3 =
+1. fixed media button compatibility with other plugins
+1. fixed localisation
 
 = 1.4.2 =
 1. changed icon for the new WordPress UI
