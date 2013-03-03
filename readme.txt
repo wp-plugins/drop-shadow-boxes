@@ -139,6 +139,9 @@ http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples
 
 == ChangeLog ==
 
+= 1.4.4 =
+1. fixed PHP warning messages
+
 = 1.4.3 =
 1. fixed media button compatibility with other plugins
 1. fixed localisation
@@ -187,6 +190,13 @@ Added a widget
 * Initial beta release.
 
 == Upgrade Notice ==
+
+= 1.4.4 =
+1. fixed PHP warning messages
+
+= 1.4.3 =
+1. fixed media button compatibility with other plugins
+1. fixed localisation
 
 = 1.4.2 =
 1. changed icon for the new WordPress UI

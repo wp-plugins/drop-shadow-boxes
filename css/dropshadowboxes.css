@@ -22,14 +22,14 @@
 .dropshadowboxes-container.dropshadowboxes-center > DIV.dropshadowboxes-drop-shadow {
     margin-left:auto;
     margin-right:auto;
-    
+
 }
 .dropshadowboxes-drop-shadow {
     background: none repeat scroll 0 0;
     padding:10px;
     margin: 10px 0 10px 0;
     position: relative;
-    border-radius:3px
+    border-radius:3px;
 }
 
 .dropshadowboxes-left{
@@ -104,7 +104,7 @@
                  -o-transform:rotate(-3deg);
                     transform:rotate(-3deg);
     bottom: 17px;
-   
+
     height: 20%;
     left: 10px;
     max-height: 100px;
@@ -122,7 +122,7 @@
                  -o-transform:rotate(-3deg);
                     transform:rotate(-3deg);
     bottom: 17px;
-   
+
     height: 20%;
     left: 10px;
     max-height: 100px;
@@ -148,7 +148,7 @@
                  -o-transform:rotate(-3deg);
                     transform:rotate(-3deg);
     bottom: 15px;
-   
+
     height: 20%;
     left: 10px;
     max-height: 100px;
@@ -179,7 +179,7 @@
                  -o-transform:skew(-8deg) rotate(-3deg);
                     transform:skew(-8deg) rotate(-3deg);
     bottom: 12px;
-   
+
     height: 55%;
     left: 10px;
     max-height: 100px;
@@ -268,7 +268,7 @@
 .dropshadowboxes-curved:before {
     border-radius: 10px 10px 10px 10px / 100px 100px 100px 100px;
     bottom: 10px;
-    
+
     left: 0;
     right: 50%;
     top: 10px;
