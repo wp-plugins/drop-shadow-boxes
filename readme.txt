@@ -4,7 +4,7 @@ Donate link: http://www.stevenhenty.com/products/wordpress-plugins/donate
 Tags: drop shadow,box shadow,perspective,raised,curl,lifted
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 1.4.3
+Stable tag: 1.4.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,10 +14,11 @@ Provides an easy way to highlight important content on your posts and pages insi
 
 Drop Shadow Boxes provides an easy way to highlight important content on your posts, pages and widget areas. Personalise the box with drop shadow effects like raised, lifted and perspective and choose whether the box has an inside shadow, outside shadow and rounded corners. The plugin includes a widget and shortcode builder with a preview so you can test your box before adding it. The shadows will display correctly on most browsers - some older versions of Internet Explorer may not display the shadows - but they will display the box with the content so nothing will be missing on the page.
 
-Please see the following page for examples to see how it performs on your browser:
-http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples/
+Please see the [examples of drop shadow boxes](http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples/) to see how the plugin performs on your browser:
 
-If you like it please give it a rating ;)
+If you like the plugin please consider giving it a rating.
+
+Get product announcements and updates from me on Facebook by giving me a 'like': [Steven Henty Web Development](https://www.facebook.com/stevenhentywebdevelopment)
 
 = Instructions =
 
@@ -65,7 +66,7 @@ effect_shadow_color = [red/green/blue/yellow/white] default: gray (known issue: 
 
 effect = [name of the effect] default: "lifted-both"
 
-Possible vlaues for the effect attribute:
+Possible values for the effect attribute:
 lifted-left
 lifted-right
 lifted-both
@@ -85,7 +86,7 @@ Drop Shadow Boxes is currently available in English and Spanish (es_ES). The sho
 
 If you'd like to contribute other languages please get in touch with me here:
 http://www.stevenhenty.com/contact/
-You'll find the .po file in the plugin root.
+You'll find the .po file in the plugin root. I'd be happy to link to your website but requests with spammy links will be ignored.
 
 = Support =
 If you find any that needs fixing, or if you have any ideas for improvements, please get in touch:
@@ -112,8 +113,8 @@ While you're editing a post or page you can open the shortcode builder by clicki
 = How do I add links and other formatting inside the box? =
 Once you've added the shortcode to the page/post you can edit the contents just like any other content.
 
-= How do two or more boxes side by side? =
-Align the second box left.
+= How do I get two or more boxes lined up side by side? =
+Try experimenting with the alignment of the boxes. To get a few boxes lined up in a row you'll probably need to align all the boxes left.
 
 = Will it work on a dark background? =
 Yes, you'll just need to set the effect_shadow_color shortcode attribute to "white".
