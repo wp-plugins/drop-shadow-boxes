@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Drop Shadow Boxes\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-22 20:23+0100\n"
-"PO-Revision-Date: 2012-07-22 20:23+0100\n"
+"POT-Creation-Date: 2013-04-10 09:35+0100\n"
+"PO-Revision-Date: 2013-04-10 11:12+0100\n"
 "Last-Translator: Steven Henty <stevehenty@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -11,209 +11,189 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.5.5\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: dropshadowboxes.php:231
-msgid "Add Drop Shadow Box"
-msgstr "Añadir una caja con sombras"
-
-#: dropshadowboxes.php:231
+#: dropshadowboxes.php:241
 msgid "Add Drop-Shadow Box"
-msgstr "Añadir una caja con sombras"
+msgstr "Drop-Shadow Box hinzufügen"
 
-#: dropshadowboxes.php:299
+#: dropshadowboxes.php:257
+msgid "Add Drop Shadow Box"
+msgstr "Drop Shadow Box hinzufügen"
+
+#: dropshadowboxes.php:257
+msgid "Add Box"
+msgstr "Box hinzufügen"
+
+#: dropshadowboxes.php:362
 msgid "Insert a Drop-Shadow Box"
-msgstr "Insertar una caja con sombras"
+msgstr "Eine Drop-Shadow Box einsetzen"
 
-#: dropshadowboxes.php:301
+#: dropshadowboxes.php:364
 msgid "Select the options below for your drop-shadow box."
-msgstr "Seleccionar las opciones de abajo para personalizar tu caja con sombras"
+msgstr "Wähle die unten stehenden Optionen für deine Drop-Shadow Box."
 
-#: dropshadowboxes.php:304
-#: widget.php:97
+#: dropshadowboxes.php:367 widget.php:132
 msgid "Effect:"
-msgstr "Efecto:"
+msgstr "Effekt:"
 
-#: dropshadowboxes.php:306
-#: widget.php:99
+#: dropshadowboxes.php:369 widget.php:134
 msgid "Lifted (Both)"
-msgstr "Alzada (dos)"
+msgstr "Angehoben (beide Seiten)"
 
-#: dropshadowboxes.php:307
-#: widget.php:100
+#: dropshadowboxes.php:370 widget.php:135
 msgid "Lifted (Left)"
-msgstr "Alzada (izquierda)"
+msgstr "Angehoben (links)"
 
-#: dropshadowboxes.php:308
-#: widget.php:101
+#: dropshadowboxes.php:371 widget.php:136
 msgid "Lifted (Right)"
-msgstr "Alzada (derecha)"
+msgstr "Angehoben (rechts)"
 
-#: dropshadowboxes.php:310
-#: widget.php:103
+#: dropshadowboxes.php:373 widget.php:138
 msgid "Curled"
-msgstr "Enrrollado"
+msgstr "Gebogen"
 
-#: dropshadowboxes.php:311
-#: widget.php:104
+#: dropshadowboxes.php:374 widget.php:139
 msgid "Perspective (Left)"
-msgstr "Con perpectiva (izquierda)"
+msgstr "Perspektivisch (links)"
 
-#: dropshadowboxes.php:312
-#: widget.php:105
+#: dropshadowboxes.php:375 widget.php:140
 msgid "Perspective (Right)"
-msgstr "Con perpectiva (derecha)"
+msgstr "Perspektivisch (rechts)"
 
-#: dropshadowboxes.php:313
-#: widget.php:106
+#: dropshadowboxes.php:376 widget.php:141
 msgid "Raised"
-msgstr "Levantada"
+msgstr "Aufsteigend"
 
-#: dropshadowboxes.php:314
-#: widget.php:107
+#: dropshadowboxes.php:377 widget.php:142
 msgid "Vertical Curve (Left)"
-msgstr "Curva vertical (Izquierda)"
+msgstr "Vertikal gebogen (links)"
 
-#: dropshadowboxes.php:315
-#: widget.php:108
+#: dropshadowboxes.php:378 widget.php:143
 msgid "Vertical Curve (Both)"
-msgstr "Curva vertical (Dos)"
+msgstr "Vertikal gebogen (beide Seiten)"
 
-#: dropshadowboxes.php:316
-#: widget.php:109
+#: dropshadowboxes.php:379 widget.php:144
 msgid "Horizontal Curve (Bottom)"
-msgstr "Curva horizontal (Abajo)"
+msgstr "Horizontal gebogen (unten)"
 
-#: dropshadowboxes.php:317
-#: widget.php:110
+#: dropshadowboxes.php:380 widget.php:145
 msgid "Horizontal Curve (Both)"
-msgstr "Curva horizontal (Dos)"
+msgstr "Horizontal gebogen (beide Seiten)"
 
-#: dropshadowboxes.php:320
+#: dropshadowboxes.php:383 widget.php:181
+msgid "Background:"
+msgstr "Hintergrund:"
+
+#: dropshadowboxes.php:387 widget.php:149
 msgid "Alignment:"
-msgstr "Alineación"
+msgstr "Ausrichtung: "
 
-#: dropshadowboxes.php:322
+#: dropshadowboxes.php:389 widget.php:151
 msgid "None"
-msgstr "Ninguna"
+msgstr "keine"
 
-#: dropshadowboxes.php:323
+#: dropshadowboxes.php:390 widget.php:152
 msgid "Left"
-msgstr "Izquierda"
+msgstr "links"
 
-#: dropshadowboxes.php:324
+#: dropshadowboxes.php:391 widget.php:153
 msgid "Right"
-msgstr "Derecha"
+msgstr "rechts"
 
-#: dropshadowboxes.php:325
+#: dropshadowboxes.php:392 widget.php:154
 msgid "Center"
-msgstr "Centro"
+msgstr "mittig"
 
-#: dropshadowboxes.php:328
-#: widget.php:115
+#: dropshadowboxes.php:402 widget.php:166
+msgid "Height:"
+msgstr "Höhe:"
+
+#: dropshadowboxes.php:405 widget.php:158
 msgid "Width:"
-msgstr "Anchura:"
+msgstr "Breite:"
 
-#: dropshadowboxes.php:331
-#: widget.php:118
-#: widget.php:125
+#: dropshadowboxes.php:408 widget.php:161 widget.php:168 widget.php:173
 msgid "pixels"
-msgstr "pixeles"
+msgstr "Pixel"
 
-#: dropshadowboxes.php:332
-#: widget.php:119
+#: dropshadowboxes.php:409 widget.php:162
 msgid "%"
 msgstr "%"
 
-#: dropshadowboxes.php:339
-msgid "Border width (pixels):"
-msgstr "Anchura del borde:"
+#: dropshadowboxes.php:412
+msgid "Border (pixels):"
+msgstr "Rahmenstärke (Pixel):"
 
-#: dropshadowboxes.php:340
-msgid "Border color:"
-msgstr "Color del borde:"
-
-#: dropshadowboxes.php:342
-#: widget.php:127
-msgid "Gray"
-msgstr "Gris"
-
-#: dropshadowboxes.php:343
-#: widget.php:128
-msgid "Red"
-msgstr "Rojo"
-
-#: dropshadowboxes.php:344
-#: widget.php:129
-msgid "Blue"
-msgstr "Azúl"
-
-#: dropshadowboxes.php:345
-#: widget.php:130
-msgid "Green"
-msgstr "Verde"
-
-#: dropshadowboxes.php:346
-#: widget.php:131
-msgid "Black"
-msgstr "Negro"
-
-#: dropshadowboxes.php:347
-#: widget.php:132
-msgid "White"
-msgstr "Blanco"
-
-#: dropshadowboxes.php:352
-#: widget.php:136
+#: dropshadowboxes.php:418 widget.php:191
 msgid "Rounded corners"
-msgstr "Esquinas redondeadas"
+msgstr "Abgerundete Kanten"
 
-#: dropshadowboxes.php:353
-#: widget.php:137
+#: dropshadowboxes.php:419 widget.php:192
 msgid "Inside shadow"
-msgstr "Sombra interior"
+msgstr "Innen liegender Schatten"
 
-#: dropshadowboxes.php:354
-#: widget.php:138
+#: dropshadowboxes.php:420 widget.php:193
 msgid "Outside shadow"
-msgstr "Sombra exterior"
+msgstr "Außen liegender Schatten"
 
-#: dropshadowboxes.php:359
-#: widget.php:87
+#: dropshadowboxes.php:425 widget.php:98
 msgid "Enter your content here."
-msgstr "Introducir contenido aquí."
+msgstr "Füge hier deinen Inhalt ein."
 
-#: dropshadowboxes.php:363
+#: dropshadowboxes.php:429
 msgid "Refresh Preview"
-msgstr "Actualizar vista previa"
+msgstr "Vorschau erneuern"
 
-#: dropshadowboxes.php:364
+#: dropshadowboxes.php:430
 msgid "Insert Box"
-msgstr "Insertar caja"
+msgstr "Box einfügen"
 
-#: dropshadowboxes.php:365
+#: dropshadowboxes.php:431
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr "Abbrechen"
 
-#: dropshadowboxes.php:368
+#: dropshadowboxes.php:434
 msgid "Preview"
-msgstr "Vista previa"
+msgstr "Vorschau"
 
 #: widget.php:16
 msgid "Drop Shadow Box Widget"
-msgstr "Caja con sombra"
+msgstr "Drop Shadow Box Widget"
 
-#: widget.php:78
+#: widget.php:86
 msgid "Title"
-msgstr "Título"
+msgstr "Titel"
 
-#: widget.php:93
+#: widget.php:128
 msgid "Title:"
-msgstr "Título:"
+msgstr "Titel:"
 
-#: widget.php:124
+#: widget.php:172
 msgid "Border:"
-msgstr "Borde:"
+msgstr "Rahmen:"
+
+#~ msgid "Border color:"
+#~ msgstr "Color del borde:"
+
+#~ msgid "Gray"
+#~ msgstr "Gris"
+
+#~ msgid "Red"
+#~ msgstr "Rojo"
+
+#~ msgid "Blue"
+#~ msgstr "Azúl"
+
+#~ msgid "Green"
+#~ msgstr "Verde"
+
+#~ msgid "Black"
+#~ msgstr "Negro"
+
+#~ msgid "White"
+#~ msgstr "Blanco"
 
 #~ msgid "Username"
 #~ msgstr "Usuario"
@@ -381,3 +361,4 @@ msgstr "Borde:"
 #~ msgstr ""
 #~ "¿Contento con el resultado? ¡Eviarlo a <a href=\"http://kdp.amazon.com"
 #~ "\">Kindle Desktop Publishing</a>!"
+

@@ -3,8 +3,8 @@ Contributors: stevehenty
 Donate link: http://www.stevenhenty.com/products/wordpress-plugins/donate
 Tags: drop shadow,box shadow,perspective,raised,curl,lifted
 Requires at least: 3.0
-Tested up to: 3.5.1
-Stable tag: 1.4.5
+Tested up to: 3.5.2
+Stable tag: 1.4.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,7 +18,7 @@ Please see the [examples of drop shadow boxes](http://www.stevenhenty.com/produc
 
 If you like the plugin please consider giving it a rating.
 
-Get product announcements and updates from me on Facebook by giving me a 'like': [Steven Henty Web Development](https://www.facebook.com/stevenhentywebdevelopment)
+Or stay in touch on Facebook: [Steven Henty Web Development](https://www.facebook.com/stevenhentywebdevelopment)
 
 = Instructions =
 
@@ -66,6 +66,8 @@ effect_shadow_color = [red/green/blue/yellow/white] default: gray (known issue: 
 
 effect = [name of the effect] default: "lifted-both"
 
+inline_styles = [true/false] default: "false" (only for use inside third party widgets)
+
 Possible values for the effect attribute:
 lifted-left
 lifted-right
@@ -82,7 +84,12 @@ horizontal-curve-both
 
 = Language Versions =
 
-Drop Shadow Boxes is currently available in English and Spanish (es_ES). The shortcode builder will automatically switch to Spanish if your WordPress installation is in Spanish (es_ES).
+Drop Shadow Boxes is currently available in English, Spanish (es_ES) and German.
+
+Many thanks to Fabio Vogt for the translation into German.
+www.fabiolous.de
+
+The shortcode builder will automatically switch to the language configured in wp-config.php.
 
 If you'd like to contribute other languages please get in touch with me here:
 http://www.stevenhenty.com/contact/
@@ -127,6 +134,12 @@ The css file will only be loaded when it's needed - when there's a [dropshadowbo
 
 = Are images used to display the shadows? =
 No. It uses CSS3 only.
+
+= How do I get the drop shadow effects to work in widgets? =
+Please try to use the dedicated Drop Shadow Box widget. If you need to use the shortcode inside a different widget, first, make sure the widget allows shortcodes (this is not always the case). If you already have a Drop Shadow Box somewhere on the page/post then the styles will be loaded and it'll look ok. If you don't, then there's a pretty high chance that the styles won't be loaded. In this case, you may like to force the output of the styles by using the "inline_styles" shortcode attribute.
+e.g.
+[dropshadowbox inline_styles="true"]your content[/dropshadowbox]
+
 
 == Screenshots ==
 
