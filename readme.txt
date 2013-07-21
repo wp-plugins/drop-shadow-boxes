@@ -153,6 +153,10 @@ http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples
 
 == ChangeLog ==
 
+= 1.4.6 =
+1. added inline_styles shortcode attribute
+1. added German language translation
+
 = 1.4.4 =
 1. fixed PHP warning messages
 
@@ -204,6 +208,10 @@ Added a widget
 * Initial beta release.
 
 == Upgrade Notice ==
+
+= 1.4.6 =
+1. added inline_styles shortcode attribute
+1. added German language translation
 
 = 1.4.4 =
 1. fixed PHP warning messages
