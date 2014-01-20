@@ -3,8 +3,8 @@ Contributors: stevehenty
 Donate link: http://www.stevenhenty.com/products/wordpress-plugins/donate
 Tags: drop shadow,box shadow,perspective,raised,curl,lifted
 Requires at least: 3.0
-Tested up to: 3.5.2
-Stable tag: 1.4.6
+Tested up to: 3.8
+Stable tag: 1.4.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,11 +14,11 @@ Provides an easy way to highlight important content on your posts and pages insi
 
 Drop Shadow Boxes provides an easy way to highlight important content on your posts, pages and widget areas. Personalise the box with drop shadow effects like raised, lifted and perspective and choose whether the box has an inside shadow, outside shadow and rounded corners. The plugin includes a widget and shortcode builder with a preview so you can test your box before adding it. The shadows will display correctly on most browsers - some older versions of Internet Explorer may not display the shadows - but they will display the box with the content so nothing will be missing on the page.
 
-Please see the [examples of drop shadow boxes](http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples/) to see how the plugin performs on your browser:
+See the [examples of drop shadow boxes](http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples/) to see how the plugin performs on your browser:
 
 If you like the plugin please consider giving it a rating.
 
-Or stay in touch on Facebook: [Steven Henty Web Development](https://www.facebook.com/stevenhentywebdevelopment)
+Facebook: [Steven Henty](https://www.facebook.com/stevenhentywebdevelopment)
 
 = Instructions =
 
@@ -153,6 +153,9 @@ http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples
 
 == ChangeLog ==
 
+= 1.4.7 =
+1. Fixed strict notices in PHP 5.4+
+
 = 1.4.6 =
 1. added inline_styles shortcode attribute
 1. added German language translation
@@ -208,6 +211,9 @@ Added a widget
 * Initial beta release.
 
 == Upgrade Notice ==
+
+= 1.4.7 =
+1. Fixed strict notices in PHP 5.4+
 
 = 1.4.6 =
 1. added inline_styles shortcode attribute
