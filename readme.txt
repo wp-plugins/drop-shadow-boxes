@@ -3,8 +3,8 @@ Contributors: stevehenty
 Donate link: http://www.stevenhenty.com/products/wordpress-plugins/donate
 Tags: drop shadow,box shadow,perspective,raised,curl,lifted
 Requires at least: 3.0
-Tested up to: 3.8
-Stable tag: 1.4.7
+Tested up to: 3.9
+Stable tag: 1.4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,9 +16,9 @@ Drop Shadow Boxes provides an easy way to highlight important content on your po
 
 See the [examples of drop shadow boxes](http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples/) to see how the plugin performs on your browser:
 
-If you like the plugin please consider giving it a rating.
+I'm offering this plugin free of charge. If you use it and like it [please consider giving it a rating](http://wordpress.org/plugins/drop-shadow-boxes/).
 
-Facebook: [Steven Henty](https://www.facebook.com/stevenhentywebdevelopment)
+Stay in touch via Facebook by liking my page: [Steven Henty](https://www.facebook.com/hentydevelopment)
 
 = Instructions =
 
@@ -66,7 +66,7 @@ effect_shadow_color = [red/green/blue/yellow/white] default: gray (known issue: 
 
 effect = [name of the effect] default: "lifted-both"
 
-inline_styles = [true/false] default: "false" (only for use inside third party widgets)
+inline_styles = [true/false] default: "false" (only for use inside third party widgets and only works when allow_url_fopen is enabled in php.ini)
 
 Possible values for the effect attribute:
 lifted-left
@@ -153,6 +153,9 @@ http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples
 
 == ChangeLog ==
 
+= 1.4.8 =
+1. Fixed more strict notices in PHP 5.4+
+
 = 1.4.7 =
 1. Fixed strict notices in PHP 5.4+
 
@@ -211,6 +214,9 @@ Added a widget
 * Initial beta release.
 
 == Upgrade Notice ==
+
+= 1.4.8 =
+1. Fixed more strict notices in PHP 5.4+
 
 = 1.4.7 =
 1. Fixed strict notices in PHP 5.4+

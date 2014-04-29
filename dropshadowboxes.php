@@ -5,10 +5,14 @@ Plugin URI: http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-bo
 Description: Drop Shadow Boxes provides an easy way to highlight important content on your posts and pages. Includes a shortcode builder with a preview so you can test your box before adding it.
 Version: 1.4.7
 Author: Steven Henty
+Contributors: stevehenty
+Donate link: http://www.stevenhenty.com/products/wordpress-plugins/donate/
 Author URI: http://www.stevenhenty.com
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 ------------------------------------------------------------------------
-Copyright 2012-2013 Steven Henty
+Copyright 2012-2014 Steven Henty
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -80,16 +84,16 @@ if (!class_exists('DropShadowBoxes')) {
 
         } //end function init
 
-        function load_color_picker_script() {
+        public static function load_color_picker_script() {
             wp_enqueue_script('farbtastic');
         }
 
-        function load_color_picker_style() {
+        public static function load_color_picker_style() {
             wp_enqueue_style('farbtastic');
         }
 
 
-        function load_styles() {
+        public static function load_styles() {
             wp_enqueue_style('dropshadowboxes_css',plugins_url('css/dropshadowboxes.css', __FILE__), null, self::$version);
         }
 
@@ -108,7 +112,7 @@ if (!class_exists('DropShadowBoxes')) {
         }
 
 
-        function conditionally_add_scripts_and_styles($posts) {
+        public static function conditionally_add_scripts_and_styles($posts) {
             if (empty($posts))
                 return $posts;
 
@@ -127,7 +131,7 @@ if (!class_exists('DropShadowBoxes')) {
             return $posts;
         }
 
-        function render_shortcode($attributes, $content = null) {
+        public static function render_shortcode($attributes, $content = null) {
 
             extract(shortcode_atts(array(
                 'align'               => "none",
@@ -259,7 +263,7 @@ if (!class_exists('DropShadowBoxes')) {
         }
 
         //Action target that displays the popup to insert a form to a post/page
-        function add_mce_popup() {
+        public static function add_mce_popup() {
             ?>
             <script>
                 function BuildDropShadowBoxShortcode() {
