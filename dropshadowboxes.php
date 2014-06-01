@@ -3,7 +3,7 @@
 Plugin Name: Drop Shadow Boxes
 Plugin URI: http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/
 Description: Drop Shadow Boxes provides an easy way to highlight important content on your posts and pages. Includes a shortcode builder with a preview so you can test your box before adding it.
-Version: 1.4.8
+Version: 1.4.9
 Author: Steven Henty
 Contributors: stevehenty
 Donate link: http://www.stevenhenty.com/products/wordpress-plugins/donate/
@@ -45,7 +45,7 @@ add_action('init', array('DropShadowBoxes', 'init'));
 
 if (!class_exists('DropShadowBoxes')) {
     class DropShadowBoxes {
-        public static $version = "1.4.7";
+        public static $version = "1.4.9";
 
         //Plugin starting point. Will load appropriate files
         public static function init() {
@@ -94,7 +94,7 @@ if (!class_exists('DropShadowBoxes')) {
 
 
         public static function load_styles() {
-            wp_enqueue_style('dropshadowboxes_css',plugins_url('css/dropshadowboxes.css', __FILE__), null, self::$version);
+            wp_enqueue_style('dropshadowboxes_css', plugins_url('css/dropshadowboxes.css', __FILE__), null, self::$version);
         }
 
 
@@ -145,7 +145,8 @@ if (!class_exists('DropShadowBoxes')) {
                 'outside_shadow'      => true,
                 'effect'              => "lifted-both",
                 'inline_styles'       => false,
-                'effect_shadow_color' => ""
+                'effect_shadow_color' => "",
+                'padding'             => ""
 
             ), $attributes));
 
@@ -181,19 +182,26 @@ if (!class_exists('DropShadowBoxes')) {
             if ($inside_shadow === true && $outside_shadow === true)
                 $box_classes .= "dropshadowboxes-inside-and-outside-shadow ";
             elseif ($inside_shadow === true)
-                $box_classes .= "dropshadowboxes-inside-shadow "; elseif ($outside_shadow === true)
+                $box_classes .= "dropshadowboxes-inside-shadow ";
+            elseif ($outside_shadow === true)
                 $box_classes .= "dropshadowboxes-outside-shadow ";
 
 
             if ($effect == "lifted")
                 $box_classes .= "dropshadowboxes-lifted-both ";
             elseif ($effect == "lifted-both")
-                $box_classes .= "dropshadowboxes-lifted-both "; elseif ($effect == "lifted-bottom-left")
-                $box_classes .= "dropshadowboxes-lifted-bottom-left "; elseif ($effect == "lifted-bottom-right")
-                $box_classes .= "dropshadowboxes-lifted-bottom-right "; elseif ($effect == "curled")
-                $box_classes .= "dropshadowboxes-curled "; elseif ($effect == "perspective-left")
-                $box_classes .= "dropshadowboxes-perspective-left "; elseif ($effect == "perspective-right")
-                $box_classes .= "dropshadowboxes-perspective-right "; elseif ($effect == "raised") {
+                $box_classes .= "dropshadowboxes-lifted-both ";
+            elseif ($effect == "lifted-bottom-left")
+                $box_classes .= "dropshadowboxes-lifted-bottom-left ";
+            elseif ($effect == "lifted-bottom-right")
+                $box_classes .= "dropshadowboxes-lifted-bottom-right ";
+            elseif ($effect == "curled")
+                $box_classes .= "dropshadowboxes-curled ";
+            elseif ($effect == "perspective-left")
+                $box_classes .= "dropshadowboxes-perspective-left ";
+            elseif ($effect == "perspective-right")
+                $box_classes .= "dropshadowboxes-perspective-right ";
+            elseif ($effect == "raised") {
 
                 if ($inside_shadow === false && $outside_shadow === false) {
                     $box_classes .= "dropshadowboxes-raised-no-inside-shadow-no-outside-shadow ";
@@ -206,9 +214,12 @@ if (!class_exists('DropShadowBoxes')) {
                 }
 
             } elseif ($effect == "vertical-curve-left")
-                $box_classes .= "dropshadowboxes-curved "; elseif ($effect == "vertical-curve-both")
-                $box_classes .= "dropshadowboxes-curved dropshadowboxes-curved-vertical-2 "; elseif ($effect == "horizontal-curve-bottom")
-                $box_classes .= "dropshadowboxes-curved dropshadowboxes-curved dropshadowboxes-curved-horizontal-1 "; elseif ($effect == "horizontal-curve-both")
+                $box_classes .= "dropshadowboxes-curved ";
+            elseif ($effect == "vertical-curve-both")
+                $box_classes .= "dropshadowboxes-curved dropshadowboxes-curved-vertical-2 ";
+            elseif ($effect == "horizontal-curve-bottom")
+                $box_classes .= "dropshadowboxes-curved dropshadowboxes-curved dropshadowboxes-curved-horizontal-1 ";
+            elseif ($effect == "horizontal-curve-both")
                 $box_classes .= "dropshadowboxes-curved dropshadowboxes-curved dropshadowboxes-curved-horizontal-2 ";
 
 
@@ -217,11 +228,20 @@ if (!class_exists('DropShadowBoxes')) {
             else
                 $box_classes .= "dropshadowboxes-effect-default";
 
+            if($padding !== ''){
+                $padding = "padding:{$padding};";
+            }
+
             $output = "";
             if ($inline_styles)
                 $output = "<script>" . file_get_contents(plugins_url('css/dropshadowboxes.css', __FILE__)) . "</script>";
 
-            $output .= '<div class="dropshadowboxes-container ' . $container_classes . '" style="' . $container_style . '"><div class="dropshadowboxes-drop-shadow ' . $box_classes . '" style="' . $box_style . 'border:' . $border_width . 'px solid ' . $border_color . '; height:' . $height . ';background-color:' . $background_color . '">' . do_shortcode($content) . '</div></div>';
+            $content = do_shortcode($content);
+            $output .= "<div class='dropshadowboxes-container {$container_classes}' style='$container_style'>
+                            <div class='dropshadowboxes-drop-shadow {$box_classes}' style='{$box_style} border: {$border_width}px solid {$border_color}; height:{$height}; background-color:{$background_color}; {$padding}'>
+                            {$content}
+                            </div>
+                        </div>";
 
             return $output;
 

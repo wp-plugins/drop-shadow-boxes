@@ -3,8 +3,8 @@ Contributors: stevehenty
 Donate link: http://www.stevenhenty.com/products/wordpress-plugins/donate
 Tags: drop shadow,box shadow,perspective,raised,curl,lifted
 Requires at least: 3.0
-Tested up to: 3.9
-Stable tag: 1.4.8
+Tested up to: 3.9.1
+Stable tag: 1.4.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,8 +66,6 @@ effect_shadow_color = [red/green/blue/yellow/white] default: gray (known issue: 
 
 effect = [name of the effect] default: "lifted-both"
 
-inline_styles = [true/false] default: "false" (only for use inside third party widgets and only works when allow_url_fopen is enabled in php.ini)
-
 Possible values for the effect attribute:
 lifted-left
 lifted-right
@@ -80,6 +78,11 @@ vertical-curve-left
 vertical-curve-both
 horizontal-curve-bottom
 horizontal-curve-both
+
+inline_styles = [true/false] default: "false" (only for use inside third party widgets and only works when allow_url_fopen is enabled in php.ini)
+
+padding = [10 px] Define the space between the box border and the box content. e.g. 20px
+
 
 
 = Language Versions =
@@ -140,6 +143,9 @@ Please try to use the dedicated Drop Shadow Box widget. If you need to use the s
 e.g.
 [dropshadowbox inline_styles="true"]your content[/dropshadowbox]
 
+= Can I get my content to fill the entire box? =
+Yes, set the padding attribute to 0. i.e. padding="0"
+
 
 == Screenshots ==
 
@@ -152,6 +158,9 @@ http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples
 
 
 == ChangeLog ==
+
+= 1.4.9 =
+1. Added the padding attribute
 
 = 1.4.8 =
 1. Fixed more strict notices in PHP 5.4+
@@ -214,6 +223,9 @@ Added a widget
 * Initial beta release.
 
 == Upgrade Notice ==
+
+= 1.4.9 =
+1. Added the padding attribute
 
 = 1.4.8 =
 1. Fixed more strict notices in PHP 5.4+
