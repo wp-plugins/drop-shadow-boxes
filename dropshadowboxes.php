@@ -3,7 +3,7 @@
 Plugin Name: Drop Shadow Boxes
 Plugin URI: http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/
 Description: Drop Shadow Boxes provides an easy way to highlight important content on your posts and pages. Includes a shortcode builder with a preview so you can test your box before adding it.
-Version: 1.4.9
+Version: 1.5
 Author: Steven Henty
 Contributors: stevehenty
 Donate link: http://www.stevenhenty.com/products/wordpress-plugins/donate/
@@ -45,7 +45,7 @@ add_action('init', array('DropShadowBoxes', 'init'));
 
 if (!class_exists('DropShadowBoxes')) {
     class DropShadowBoxes {
-        public static $version = "1.4.9";
+        public static $version = "1.5";
 
         //Plugin starting point. Will load appropriate files
         public static function init() {
@@ -73,7 +73,7 @@ if (!class_exists('DropShadowBoxes')) {
                 add_filter('the_posts', array('DropShadowBoxes', 'conditionally_add_scripts_and_styles')); // the_posts gets triggered before wp_head
 
                 if (is_active_widget('', '', 'dropshadowboxes_widget')) { // check if search widget is used
-                    wp_enqueue_style('dropshadowboxes_css', plugins_url('css/dropshadowboxes.css', __FILE__));
+                    wp_enqueue_style('dropshadowboxes_css', plugins_url('css/dropshadowboxes.css', __FILE__), null, self::$version);
                 }
 
             }
@@ -125,7 +125,7 @@ if (!class_exists('DropShadowBoxes')) {
             }
 
             if ($shortcode_found) {
-                wp_enqueue_style('dropshadowboxes_css', plugins_url('css/dropshadowboxes.css', __FILE__));
+                wp_enqueue_style('dropshadowboxes_css', plugins_url('css/dropshadowboxes.css', __FILE__), null, self::$version);
             }
 
             return $posts;
@@ -135,7 +135,10 @@ if (!class_exists('DropShadowBoxes')) {
 
             extract(shortcode_atts(array(
                 'align'               => "none",
-                'width'               => "300px",
+                'width'               => "",
+                'max_width'           => "",
+                'min_width'           => "",
+                'margin'              => "",
                 'height'              => "",
                 'background_color'    => "white",
                 'border_width'        => "2",
@@ -163,16 +166,25 @@ if (!class_exists('DropShadowBoxes')) {
 
             if ($align == "left") {
                 $container_classes .= "dropshadowboxes-left ";
-                $container_style .= 'width:' . $width . ';';
+                if($width !== ''){
+                    $container_style .= 'width:' . $width . ';';
+                }
+
             } elseif ($align == "right") {
                 $container_classes .= "dropshadowboxes-right ";
-                $container_style .= 'width:' . $width . ';';
+                if($width !== ''){
+                    $container_style .= 'width:' . $width . ';';
+                }
             } elseif ($align == "none") {
-                $container_style .= 'width:' . $width . ';';
+                if($width !== ''){
+                    $container_style .= 'width:' . $width . ';';
+                }
             } elseif ($align == "center") {
                 $container_classes .= "dropshadowboxes-center ";
                 $container_style .= 'width:100%;';
-                $box_style .= 'width:' . $width . ';';
+                if($width !== ''){
+                    $box_style .= 'width:' . $width . ';';
+                }
             }
 
             if ($rounded_corners === true)
@@ -221,15 +233,29 @@ if (!class_exists('DropShadowBoxes')) {
                 $box_classes .= "dropshadowboxes-curved dropshadowboxes-curved dropshadowboxes-curved-horizontal-1 ";
             elseif ($effect == "horizontal-curve-both")
                 $box_classes .= "dropshadowboxes-curved dropshadowboxes-curved dropshadowboxes-curved-horizontal-2 ";
+            elseif ($effect == "none")
+                $box_classes = "";
 
 
             if (!empty ($effect_shadow_color))
                 $box_classes .= "dropshadowboxes-effect-" . $effect_shadow_color;
-            else
+            elseif($effect != "none")
                 $box_classes .= "dropshadowboxes-effect-default";
 
             if($padding !== ''){
                 $padding = "padding:{$padding};";
+            }
+
+            if($max_width !== ''){
+                $max_width = "max-width:{$max_width};";
+            }
+
+            if($min_width !== ''){
+                $min_width = "min-width:{$min_width};";
+            }
+
+            if($margin !== ''){
+                $margin = "margin:{$margin};";
             }
 
             $output = "";
@@ -238,7 +264,7 @@ if (!class_exists('DropShadowBoxes')) {
 
             $content = do_shortcode($content);
             $output .= "<div class='dropshadowboxes-container {$container_classes}' style='$container_style'>
-                            <div class='dropshadowboxes-drop-shadow {$box_classes}' style='{$box_style} border: {$border_width}px solid {$border_color}; height:{$height}; background-color:{$background_color}; {$padding}'>
+                            <div class='dropshadowboxes-drop-shadow {$box_classes}' style='{$box_style} border: {$border_width}px solid {$border_color}; height:{$height}; background-color:{$background_color}; {$padding} {$max_width} {$min_width} {$margin}'>
                             {$content}
                             </div>
                         </div>";

@@ -4,7 +4,7 @@ Donate link: http://www.stevenhenty.com/products/wordpress-plugins/donate
 Tags: drop shadow,box shadow,perspective,raised,curl,lifted
 Requires at least: 3.0
 Tested up to: 3.9.1
-Stable tag: 1.4.9
+Stable tag: 1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,7 +18,7 @@ See the [examples of drop shadow boxes](http://www.stevenhenty.com/products/word
 
 I'm offering this plugin free of charge. If you use it and like it [please consider giving it a rating](http://wordpress.org/plugins/drop-shadow-boxes/).
 
-Stay in touch via Facebook by liking my page: [Steven Henty](https://www.facebook.com/hentydevelopment)
+Stay in touch by following me on facebook: [Steven Henty](https://www.facebook.com/hentydevelopment)
 
 = Instructions =
 
@@ -46,7 +46,7 @@ Shortcode Attributes:
 
 align = [left/right/center/none] default: "none"
 
-width = [width plus units e.g. "250px" or "50%"] default: "300px"
+width = [width plus units e.g. "250px" or "50%"] default: not set
 
 height = [width plus units e.g. "250px"] default: "auto"
 
@@ -67,22 +67,28 @@ effect_shadow_color = [red/green/blue/yellow/white] default: gray (known issue: 
 effect = [name of the effect] default: "lifted-both"
 
 Possible values for the effect attribute:
-lifted-left
-lifted-right
-lifted-both
-curled
-perspective-left
-perspective-right
-raised
-vertical-curve-left
-vertical-curve-both
-horizontal-curve-bottom
-horizontal-curve-both
+* none
+* lifted-left
+* lifted-right
+* lifted-both
+* curled
+* perspective-left
+* perspective-right
+* raised
+* vertical-curve-left
+* vertical-curve-both
+* horizontal-curve-bottom
+* horizontal-curve-both
 
 inline_styles = [true/false] default: "false" (only for use inside third party widgets and only works when allow_url_fopen is enabled in php.ini)
 
-padding = [10 px] Define the space between the box border and the box content. e.g. 20px
+padding = [width plus units e.g. "250px" or "50%"] Defines the space between the box border and the box content. e.g. 20px. Default:10px;
 
+margin = [width plus units e.g. "250px" or "50%"]  Defines the space around the box. e.g. 20px. Default:not set;
+
+max_width = [width plus units e.g. "250px" or "50%"] Defines the maximum width for the box e.g. 300px
+
+min_width = [width plus units e.g. "250px" or "50%"] Defines the minimum width of the box e.g. 200px
 
 
 = Language Versions =
@@ -146,6 +152,9 @@ e.g.
 = Can I get my content to fill the entire box? =
 Yes, set the padding attribute to 0. i.e. padding="0"
 
+= How do I add space around the box? =
+Set the margin attribute e.g. 20px
+
 
 == Screenshots ==
 
@@ -158,6 +167,11 @@ http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples
 
 
 == ChangeLog ==
+
+= 1.5 =
+1. Added the margin, max_width and min_width attributes
+1. Added "none" as an option for the "effect" attribute
+1. Updated the default width option to not set
 
 = 1.4.9 =
 1. Added the padding attribute
