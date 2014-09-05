@@ -45,7 +45,7 @@ add_action('init', array('DropShadowBoxes', 'init'));
 
 if (!class_exists('DropShadowBoxes')) {
     class DropShadowBoxes {
-        public static $version = "1.5";
+        public static $version = "1.5.1";
 
         //Plugin starting point. Will load appropriate files
         public static function init() {
