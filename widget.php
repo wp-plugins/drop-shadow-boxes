@@ -11,11 +11,17 @@ function dropshadowboxes_register_widget() {
 if(!class_exists("DropShadowBoxesWidget")){
 	class DropShadowBoxesWidget extends WP_Widget {
 
-		function DropShadowBoxesWidget() {
-			$this->WP_Widget( 'dropshadowboxes_widget', 'Drop Shadow Box',
-								array( 'classname' => 'dropshadowboxes_widget', 'description' => __('Drop Shadow Box Widget', "dropshadowboxes") ),
-								array( 'width' => 200, 'height' => 250, 'id_base' => 'dropshadowboxes_widget' )
-								);
+		function __construct() {
+
+			$description = esc_html__( 'Drop Shadow Box Widget', 'gravityforms' );
+
+			WP_Widget::__construct(
+				'dropshadowboxes_widget',
+				__( 'Drop Shadow Box', 'dropshadowboxes' ),
+				array( 'classname' => 'dropshadowboxes_widget', 'description' => $description ),
+				array( 'width' => 200, 'height' => 250, 'id_base' => 'dropshadowboxes_widget' )
+			);
+
 		}
 
 		function widget( $args, $instance ) {

@@ -3,16 +3,16 @@ Contributors: stevehenty
 Donate link: http://www.stevenhenty.com/products/wordpress-plugins/donate
 Tags: drop shadow,box shadow,perspective,raised,curl,lifted
 Requires at least: 3.0
-Tested up to: 4.0
-Stable tag: 1.5.1
+Tested up to: 4.3
+Stable tag: 1.5.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Provides an easy way to highlight important content on your posts and pages inside a box with a drop shadow.
+Highlight important content on your posts and pages inside a box with a drop shadow.
 
 == Description ==
 
-Drop Shadow Boxes provides an easy way to highlight important content on your posts, pages and widget areas. Personalise the box with drop shadow effects like raised, lifted and perspective and choose whether the box has an inside shadow, outside shadow and rounded corners. The plugin includes a widget and shortcode builder with a preview so you can test your box before adding it. The shadows will display correctly on most browsers - some older versions of Internet Explorer may not display the shadows - but they will display the box with the content so nothing will be missing on the page.
+Drop Shadow Boxes highlight important content on your posts, pages and widget areas. Personalise the box with drop shadow effects like raised, lifted and perspective and choose whether the box has an inside shadow, outside shadow and rounded corners. The plugin includes a widget and shortcode builder with a preview so you can test your box before adding it. The shadows will display correctly on most browsers - some older versions of Internet Explorer may not display the shadows - but they will display the box with the content so nothing will be missing on the page.
 
 See the [examples of drop shadow boxes](http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples/) to see how the plugin performs on your browser:
 
@@ -96,7 +96,7 @@ min_width = [width plus units e.g. "250px" or "50%"] Defines the minimum width o
 Drop Shadow Boxes is currently available in English, Spanish (es_ES) and German.
 
 Many thanks to Fabio Vogt for the translation into German.
-www.fabiolous.de
+http://www.fabiolous.de
 
 The shortcode builder will automatically switch to the language configured in wp-config.php.
 
@@ -118,6 +118,9 @@ Please also get in touch if you're using the latest version of your browser but 
 1.  Go to the Plugin management page of WordPress admin section and enable the 'Drop Shadow Boxes' plugin
 
 == Frequently Asked Questions ==
+
+= How do I make the boxes 'responsive' =
+A true responsive design ought to be handled more at the page level but you'll probably find what you're looking for if you change the width attribute to "auto".
 
 = Will the shadows work in all browser? =
 It will work on the latest versions of all browsers. Some older browsers may not display the shadows - but they will display the box with the content. Please see the following page for examples to see how it performs on your browser:
@@ -167,6 +170,10 @@ http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples
 
 
 == ChangeLog ==
+
+
+= 1.5.2 =
+1. Added support for WordPress 4.3
 
 = 1.5 =
 1. Added the margin, max_width and min_width attributes
@@ -237,6 +244,9 @@ Added a widget
 * Initial beta release.
 
 == Upgrade Notice ==
+
+= 1.5.2 =
+1. Added support for WordPress 4.3
 
 = 1.4.9 =
 1. Added the padding attribute
