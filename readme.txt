@@ -4,7 +4,7 @@ Donate link: http://www.stevenhenty.com/products/wordpress-plugins/donate
 Tags: drop shadow,box shadow,perspective,raised,curl,lifted
 Requires at least: 3.0
 Tested up to: 4.3
-Stable tag: 1.5.2
+Stable tag: 1.5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -93,10 +93,13 @@ min_width = [width plus units e.g. "250px" or "50%"] Defines the minimum width o
 
 = Language Versions =
 
-Drop Shadow Boxes is currently available in English, Spanish (es_ES) and German.
+Drop Shadow Boxes is currently available in English, Spanish (es_ES), German and Serbian.
 
 Many thanks to Fabio Vogt for the translation into German.
 http://www.fabiolous.de
+
+And to Ogi Djuraskovic, First Site Guide for the Serbian translation
+http://firstsiteguide.com
 
 The shortcode builder will automatically switch to the language configured in wp-config.php.
 
@@ -171,6 +174,8 @@ http://www.stevenhenty.com/products/wordpress-plugins/drop-shadow-boxes/examples
 
 == ChangeLog ==
 
+= 1.5.3 =
+1. Added the Serbian translation
 
 = 1.5.2 =
 1. Added support for WordPress 4.3
@@ -244,6 +249,9 @@ Added a widget
 * Initial beta release.
 
 == Upgrade Notice ==
+
+= 1.5.3 =
+1. Added the Serbian translation
 
 = 1.5.2 =
 1. Added support for WordPress 4.3
